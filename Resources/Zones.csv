@@ -1,0 +1,273 @@
+Zone_id,Zones
+Zone1,St. John's East
+Zone2,St. John's West
+Zone3,Remainder of CMA
+Zone4,Peninsula South
+Zone5,Peninsula North
+Zone6,Mainland South
+Zone7,Mainland North
+Zone8,Dartmouth North
+Zone9,Dartmouth South
+Zone10,Dartmouth East
+Zone11,Bedford
+Zone12,Sackville
+Zone13,Central Moncton
+Zone14,West Moncton
+Zone15,East Moncton
+Zone16,North Moncton
+Zone17,Riverview
+Zone18,Dieppe City
+Zone19,South
+Zone20,West
+Zone21,North
+Zone22,East
+Zone23,Outlying Areas
+Zone24,North Sector
+Zone25,Chicoutimi-Sud
+Zone26,Jonquière
+Zone27,La Baie
+Zone28,Downtown Montréal/Îles-des-Soeurs
+Zone29,Sud-Ouest/Verdun
+Zone30,LaSalle
+Zone31,ND-de-Grâce/Ct-St-Luc etc.
+Zone32,Ct-des-Neiges/Mt-Royal/Outremont
+Zone33,Plateau-Mont-Royal
+Zone34,Villeray/St-Michel/Pc-Extension
+Zone35,Hochelaga-Maisonneuve
+Zone36,Rosemont/La Petite-Patrie
+Zone37,Anjou/Saint-Léonard
+Zone38,Montréal-Nord
+Zone39,Ahuntsic/Cartierville
+Zone40,Saint-Laurent
+Zone41,Dorval/Lachine/Saint-Pierre
+Zone42,Baie-d'Urfé/Beaconsfield etc.
+Zone43,Sainte-Geneviève/Senneville etc.
+Zone44,Mercier
+Zone45,Pte-aux-Trembles/Montréal-E etc.
+Zone46,Chomedey/Sainte-Dorothée
+Zone47,Laval-des-Rapides
+Zone48,Pont-Viau
+Zone49,St-François/St-Vincent/Duvernay
+Zone50,Vimont/Auteuil
+Zone51,Laval-Ouest/Fabreville/Ste-Rose
+Zone52,Mirabel/Oka/Pointe-Calumet etc.
+Zone53,Blainville/Ste-Thérèse etc.
+Zone54,Mascouche/Terrebonne etc.
+Zone55,L'Assomption/Lavaltrie etc.
+Zone56,St-Jérôme/Gore/St-Colomban etc.
+Zone57,Longueuil
+Zone58,Boucherville/Brossard etc.
+Zone59,Beauharnois/La Prairie/Léry etc.
+Zone60,Beloeil/McMasterville etc.
+Zone61,Carignan/Chambly/St-Mathias etc.
+Zone62,ND-de-L'île-Perrot/Pincourt etc.
+Zone63,Saint-Jean
+Zone64,Iberville
+Zone65,Saint-Luc
+Zone66,Saint-Lin–Laurentides V
+Zone67,Hull
+Zone68,Aylmer
+Zone69,Gatineau
+Zone70,Peripheral
+Zone71,Haute-Ville
+Zone72,Basse-Ville
+Zone73,Sainte-Foy-Sillery
+Zone74,Les Rivières
+Zone75,Beauport
+Zone76,Charlesbourg
+Zone77,Haute-Saint-Charles
+Zone78,Val-Bélair-L'Ancienne-Lorette
+Zone79,Saint-Augustin-Cap-Rouge
+Zone80,Northern Surrounding Area
+Zone81,South Shore West
+Zone82,South Shore Centre
+Zone83,South Shore East
+Zone84,East District
+Zone85,Central District
+Zone86,Mont-Bellevue
+Zone87,North District
+Zone88,Brompton
+Zone89,Rock-Forest–St-Elie–Deauville
+Zone90,Magog
+Zone91,Fleurimont
+Zone92,Lennoxville
+Zone93,Downtown
+Zone94,UQTR Sector
+Zone95,Trois-Rivières-Ouest
+Zone96,Pointe-du-Lac/Yamachiche
+Zone97,Cap-de-la-Madeleine
+Zone98,St-Louis/Champlain/St-Maurice/Ste-Marthe
+Zone99,Bécancour
+Zone100,Barrie
+Zone101,City of Belleville
+Zone102,City of Quinte West
+Zone103,Brantford
+Zone104,Guelph/Eramosa and Puslinch
+Zone105,Downtown Core
+Zone106,Central East
+Zone107,East End
+Zone108,Central
+Zone109,West End
+Zone110,Mountain
+Zone111,Grimsby and Stoney Creek
+Zone112,Burlington
+Zone113,Ancast./Dundas/Flambor./Glanbrk.
+Zone114,Downtown Kingston
+Zone115,Southwestern Kingston
+Zone116,Northern Kingston
+Zone117,Kitchener East
+Zone118,Kitchener Central
+Zone119,Kitchener West
+Zone120,Waterloo
+Zone121,Cambridge
+Zone122,Three Townships
+Zone123,Downtown North
+Zone124,Northeast
+Zone125,Northwest
+Zone126,Southwest
+Zone127,Central South
+Zone128,St. Thomas
+Zone129,Strathroy-Caradoc
+Zone130,St. Catharines (Core)
+Zone131,St. Catharines (Remainder North)
+Zone132,St. Catharines (Remainder South)
+Zone133,Niagara Falls (Core)
+Zone134,Niagara Falls (Remainder)
+Zone135,Welland
+Zone136,Fort Erie
+Zone137,Oshawa (North)
+Zone138,Oshawa (South/Central)
+Zone139,Whitby
+Zone140,Clarington
+Zone141,Sandy Hill/Lowertown
+Zone142,Glebe/Old Ottawa South
+Zone143,Alta Vista
+Zone144,Carlington/Iris
+Zone145,Chinatown/Hintonburg/Westboro N
+Zone146,New Edinb./Manor Park/Overbrook
+Zone147,Westboro S/Hampton Pk/Britannia
+Zone148,Hunt Club/South Keys
+Zone149,Vanier
+Zone150,Gloucester North/Orleans
+Zone151,Eastern Ottawa Surrounding Areas
+Zone152,Nepean
+Zone153,Western Ottawa Surrounding Areas
+Zone154,North Grenville MU
+Zone155,Lockerby
+Zone156,New Sudbury
+Zone157,Old Sudbury
+Zone158,North Ward
+Zone159,South Ward
+Zone160,Toronto (Central)
+Zone161,Toronto (East)
+Zone162,Toronto (North)
+Zone163,Toronto (West)
+Zone164,Etobicoke (South)
+Zone165,Etobicoke (Central)
+Zone166,Etobicoke (North)
+Zone167,York
+Zone168,East York
+Zone169,Scarborough (Central)
+Zone170,Scarborough (North)
+Zone171,Scarborough (East)
+Zone172,North York (Southeast)
+Zone173,North York (Northeast)
+Zone174,North York (Southwest)
+Zone175,North York (N.Central)
+Zone176,North York (Northwest)
+Zone177,Mississauga (South)
+Zone178,Mississauga (Northwest)
+Zone179,Mississauga (Northeast)
+Zone180,Brampton (West)
+Zone181,Brampton (East)
+Zone182,Oakville
+Zone183,Caledon
+Zone184,Richmond Hill/Vaughan/King
+Zone185,"Aurora, Newmkt, Whit-St."
+Zone186,Markham
+Zone187,Pickering/Ajax/Uxbridge
+Zone188,Milton/Halton Hills
+Zone189,Orangeville/Mono
+Zone190,Bradford/West Gwillimbury/New Tecumseth
+Zone191,Centre
+Zone192,East Inner
+Zone193,East Outer
+Zone194,Amherstburg
+Zone195,Fort Rouge
+Zone196,Centennial
+Zone197,Midland
+Zone198,Lord Selkirk
+Zone199,St. James
+Zone200,West Kildonan
+Zone201,East Kildonan
+Zone202,Transcona
+Zone203,St. Boniface
+Zone204,St. Vital
+Zone205,Fort Garry
+Zone206,Assiniboine Park
+Zone207,South: Lakeview/Albert Park
+Zone208,South: Wascana University
+Zone209,Southeast
+Zone210,Beltline
+Zone211,North Hill
+Zone212,Chinook
+Zone213,Fish Creek
+Zone214,Other Centres
+Zone215,Hudson's Bay Reserve
+Zone216,University
+Zone217,West Central
+Zone218,Jasper Place
+Zone219,West Jasper Place
+Zone220,South West
+Zone221,East Central
+Zone222,Millwoods
+Zone223,North Central
+Zone224,North East
+Zone225,Castledown
+Zone226,St. Albert
+Zone227,Other Outlying Areas
+Zone228,Fort Saskatchewan
+Zone229,Leduc
+Zone230,Spruce Grove
+Zone231,Stony Plain
+Zone232,Strathcona County
+Zone233,Lethbridge
+Zone234,Abbotsford
+Zone235,Mission
+Zone236,Core Area
+Zone237,Rutland
+Zone238,West End/Stanley Park
+Zone239,English Bay
+Zone240,South Granville/Oak
+Zone241,Kitsilano/Point Grey
+Zone242,Westside/Kerrisdale
+Zone243,Marpole
+Zone244,Mount Pleasant/Renfrew Heights
+Zone245,East Hastings
+Zone246,Southeast Vancouver
+Zone247,University Endowment Lands
+Zone248,Central Park/Metrotown
+Zone249,Southeast Burnaby
+Zone250,North Burnaby
+Zone251,New Westminster
+Zone252,North Vancouver CY
+Zone253,North Vancouver DM
+Zone254,West Vancouver
+Zone255,Richmond
+Zone256,Delta
+Zone257,Surrey
+Zone258,White Rock
+Zone259,Langley City and Langley DM
+Zone260,Tri-Cities
+Zone261,Maple Ridge/Pitt Meadows
+Zone262,Cook St. Area
+Zone263,Fort St. Area
+Zone264,James Bay Area
+Zone265,Remainder of City
+Zone266,Saanich/Central Saanich
+Zone267,Esquimalt
+Zone268,Langford/Vw Royal/Colwood/Sooke
+Zone269,Oak Bay
+Zone270,North Saanich
+Zone271,Sidney
+Zone272,Saint-Lin-Laurentides V
