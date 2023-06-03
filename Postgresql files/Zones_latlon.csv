@@ -1,0 +1,273 @@
+Zone_id,Zones,Lat,Lon
+Zone1,St. John's East,40.55588,-84.08356
+Zone2,St. John's West,40.55588,-84.08356
+Zone3,Remainder of CMA,,
+Zone4,Peninsula South,45.28654565,-81.69690831989215
+Zone5,Peninsula North,41.491682,-81.696249
+Zone6,Mainland South,-6.28862,106.71789
+Zone7,Mainland North,48.827532,-123.667755
+Zone8,Dartmouth North,44.6799707,-63.5720232
+Zone9,Dartmouth South,44.6799707,-63.5720232
+Zone10,Dartmouth East,37.241279,-121.896243
+Zone11,Bedford,44.7303901,-63.6582365
+Zone12,Sackville,45.8999177,-64.3655256
+Zone13,Central Moncton,46.097995,-64.80011
+Zone14,West Moncton,46.097995,-64.80011
+Zone15,East Moncton,46.097995,-64.80011
+Zone16,North Moncton,46.097995,-64.80011
+Zone17,Riverview,46.0612076,-64.8033246
+Zone18,Dieppe City,46.087332,-64.713891
+Zone19,South,43.506433,-80.218968
+Zone20,West,50.8486905,2.9463932
+Zone21,North,43.572112,-80.248328
+Zone22,East,43.597482,-81.306542
+Zone23,Outlying Areas,,
+Zone24,North Sector,48.827532,-123.667755
+Zone25,Chicoutimi-Sud,48.433309,-71.066706
+Zone26,Jonquière,48.405959,-71.069183
+Zone27,La Baie,45.365147199999996,-75.84126216589354
+Zone28,Downtown Montréal/Îles-des-Soeurs,42.312852,-83.03605
+Zone29,Sud-Ouest/Verdun,45.459078,-73.5731774
+Zone30,LaSalle,42.21807995,-83.06409000924808
+Zone31,ND-de-Grâce/Ct-St-Luc etc.,,
+Zone32,Ct-des-Neiges/Mt-Royal/Outremont,,
+Zone33,Plateau-Mont-Royal,45.523889,-73.578776
+Zone34,Villeray/St-Michel/Pc-Extension,50.745226,2.260741
+Zone35,Hochelaga-Maisonneuve,45.55865,-73.53736
+Zone36,Rosemont/La Petite-Patrie,45.5445431,-73.58347499021464
+Zone37,Anjou/Saint-Léonard,45.60008,-73.54917
+Zone38,Montréal-Nord,45.5938992,-73.6376062
+Zone39,Ahuntsic/Cartierville,45.5418621,-73.6803193
+Zone40,Saint-Laurent,45.5088774,-73.6875187
+Zone41,Dorval/Lachine/Saint-Pierre,47.44778,-77.07806
+Zone42,Baie-d'Urfé/Beaconsfield etc.,52.864899,-74.520074
+Zone43,Sainte-Geneviève/Senneville etc.,49.7369,1.0325
+Zone44,Mercier,45.310444,-73.746051
+Zone45,Pte-aux-Trembles/Montréal-E etc.,46.47361,-84.46611
+Zone46,Chomedey/Sainte-Dorothée,45.53338,-73.81589
+Zone47,Laval-des-Rapides,45.5564172,-73.7005593
+Zone48,Pont-Viau,45.571727,-73.6802464
+Zone49,St-François/St-Vincent/Duvernay,46.0637,-72.81906
+Zone50,Vimont/Auteuil,45.612091,-73.728793
+Zone51,Laval-Ouest/Fabreville/Ste-Rose,45.55008,-73.86589
+Zone52,Mirabel/Oka/Pointe-Calumet etc.,,
+Zone53,Blainville/Ste-Thérèse etc.,45.688505,-73.853123
+Zone54,Mascouche/Terrebonne etc.,45.76131,-73.608999
+Zone55,L'Assomption/Lavaltrie etc.,45.876281,-73.413012
+Zone56,St-Jérôme/Gore/St-Colomban etc.,45.785621,-74.016301
+Zone57,Longueuil,45.521906,-73.4644578
+Zone58,Boucherville/Brossard etc.,45.596742,-73.426916
+Zone59,Beauharnois/La Prairie/Léry etc.,46.64264,-60.96583
+Zone60,Beloeil/McMasterville etc.,45.582563,-73.212892
+Zone61,Carignan/Chambly/St-Mathias etc.,,
+Zone62,ND-de-L'île-Perrot/Pincourt etc.,52.233934,11.523874
+Zone63,Saint-Jean,46.921801,-70.889475
+Zone64,Iberville,45.3039219,-73.2297415
+Zone65,Saint-Luc,45.3621422,-73.3036849
+Zone66,Saint-Lin–Laurentides V,45.571593,-73.947887
+Zone67,Hull,45.4405842,-75.7326823
+Zone68,Aylmer,42.773227,-80.983658
+Zone69,Gatineau,45.4277659,-75.710976
+Zone70,Peripheral,,
+Zone71,Haute-Ville,49.21679,-66.06548
+Zone72,Basse-Ville,45.4324898,-75.6893758
+Zone73,Sainte-Foy-Sillery,45.40008,-73.58248
+Zone74,Les Rivières,46.8299224,-71.3017351205936
+Zone75,Beauport,46.90711055,-71.21279691763314
+Zone76,Charlesbourg,46.89564985,-71.2908285897658
+Zone77,Haute-Saint-Charles,46.14834,-64.39892
+Zone78,Val-Bélair-L'Ancienne-Lorette,46.034502,-74.211989
+Zone79,Saint-Augustin-Cap-Rouge,51.182654,-58.517703
+Zone80,Northern Surrounding Area,46.50839,-81.24983
+Zone81,South Shore West,45.76771,-63.32493
+Zone82,South Shore Centre,45.76771,-63.32493
+Zone83,South Shore East,44.533234,-87.927509
+Zone84,East District,43.69053,-79.32794
+Zone85,Central District,43.64713,-79.38094
+Zone86,Mont-Bellevue,49.0979725,-66.5158716
+Zone87,North District,43.76681,-79.4163
+Zone88,Brompton,45.472358,-71.9452752
+Zone89,Rock-Forest–St-Elie–Deauville,45.3423096,-72.0415529
+Zone90,Magog,45.2658014,-72.1480686
+Zone91,Fleurimont,45.4063675,-71.8385173
+Zone92,Lennoxville,45.3661982,-71.8564428
+Zone93,Downtown,41.81636,-87.869964
+Zone94,UQTR Sector,,
+Zone95,Trois-Rivières-Ouest,46.3275756,-72.5994371
+Zone96,Pointe-du-Lac/Yamachiche,46.282428,-72.830772
+Zone97,Cap-de-la-Madeleine,46.368253,-72.509079
+Zone98,St-Louis/Champlain/St-Maurice/Ste-Marthe,47.665583,-68.996252
+Zone99,Bécancour,46.339343,-72.433205
+Zone100,Barrie,44.3893113,-79.6901736
+Zone101,City of Belleville,44.2436328,-77.3607597
+Zone102,City of Quinte West,44.0988246,-77.5748551
+Zone103,Brantford,43.1408157,-80.2631733
+Zone104,Guelph/Eramosa and Puslinch,43.645174,-80.210816
+Zone105,Downtown Core,51.047317,-114.069957
+Zone106,Central East,45.9096474,-79.30272540942535
+Zone107,East End,49.845348,-99.9278776
+Zone108,Central,47.569667,-52.720671
+Zone109,West End,50.5496565,-102.418496
+Zone110,Mountain,36.681391,-121.602478
+Zone111,Grimsby and Stoney Creek,,
+Zone112,Burlington,43.3248924,-79.7966835
+Zone113,Ancast./Dundas/Flambor./Glanbrk.,,
+Zone114,Downtown Kingston,50.452985,-104.61401
+Zone115,Southwestern Kingston,44.263277,-76.524396
+Zone116,Northern Kingston,48.0166,-53.99812
+Zone117,Kitchener East,49.15819,-116.33823
+Zone118,Kitchener Central,49.1584978,-116.335466
+Zone119,Kitchener West,49.15819,-116.33823
+Zone120,Waterloo,43.4652699,-80.5222961
+Zone121,Cambridge,43.3600536,-80.3123023
+Zone122,Three Townships,46.1845,-62.5679
+Zone123,Downtown North,62.4541842,-114.3704916
+Zone124,Northeast,43.67602,-79.657036
+Zone125,Northwest,44.40431,-64.35666
+Zone126,Southwest,50.979627,-114.129269
+Zone127,Central South,43.26444,-79.87528
+Zone128,St. Thomas,42.779022,-81.1929882
+Zone129,Strathroy-Caradoc,42.9064729,-81.55485268973419
+Zone130,St. Catharines (Core),43.270858,-79.261356
+Zone131,St. Catharines (Remainder North),47.56494,-52.70931
+Zone132,St. Catharines (Remainder South),43.1579812,-79.2441003
+Zone133,Niagara Falls (Core),43.1065603,-79.0639039
+Zone134,Niagara Falls (Remainder),43.1065603,-79.0639039
+Zone135,Welland,42.9922181,-79.2484192
+Zone136,Fort Erie,42.91308,-78.918611
+Zone137,Oshawa (North),43.8975558,-78.8635324
+Zone138,Oshawa (South/Central),43.827693,-78.825991
+Zone139,Whitby,43.87982,-78.9421751
+Zone140,Clarington,43.96868585,-78.65135738273909
+Zone141,Sandy Hill/Lowertown,47.84741,-64.5114
+Zone142,Glebe/Old Ottawa South,54.30199,-8.25254
+Zone143,Alta Vista,45.3865483,-75.6625397
+Zone144,Carlington/Iris,17.72861,-95.4225
+Zone145,Chinatown/Hintonburg/Westboro N,45.40379,-75.7283
+Zone146,New Edinb./Manor Park/Overbrook,,
+Zone147,Westboro S/Hampton Pk/Britannia,,
+Zone148,Hunt Club/South Keys,45.338015,-75.711276
+Zone149,Vanier,45.4364072,-75.6619152
+Zone150,Gloucester North/Orleans,39.893757,-75.121178
+Zone151,Eastern Ottawa Surrounding Areas,44.61685,-63.48199
+Zone152,Nepean,45.3446891,-75.7639408
+Zone153,Western Ottawa Surrounding Areas,43.990992,-64.664154
+Zone154,North Grenville MU,44.985842649999995,-75.64483041274728
+Zone155,Lockerby,44.32004,-81.22948
+Zone156,New Sudbury,47.15188,-68.50499
+Zone157,Old Sudbury,47.1089348,-81.2633416
+Zone158,North Ward,42.67508,-81.21789
+Zone159,South Ward,45.36203,-75.69602
+Zone160,Toronto (Central),43.64877,-79.38171
+Zone161,Toronto (East),43.7305734,-79.3342029
+Zone162,Toronto (North),43.64877,-79.38171
+Zone163,Toronto (West),43.64877,-79.38171
+Zone164,Etobicoke (South),43.6435559,-79.5656326
+Zone165,Etobicoke (Central),43.6435559,-79.5656326
+Zone166,Etobicoke (North),43.6435559,-79.5656326
+Zone167,York,46.3160182,-63.0972127
+Zone168,East York,43.699971000000005,-79.33251996261595
+Zone169,Scarborough (Central),43.7729744,-79.2576479
+Zone170,Scarborough (North),43.7729744,-79.2576479
+Zone171,Scarborough (East),54.34937,-0.52973
+Zone172,North York (Southeast),50.98395,-113.988735
+Zone173,North York (Northeast),43.67602,-79.657036
+Zone174,North York (Southwest),50.979627,-114.129269
+Zone175,North York (N.Central),43.76681,-79.4163
+Zone176,North York (Northwest),44.40431,-64.35666
+Zone177,Mississauga (South),43.5896231,-79.6443879
+Zone178,Mississauga (Northwest),43.5896231,-79.6443879
+Zone179,Mississauga (Northeast),43.5896231,-79.6443879
+Zone180,Brampton (West),43.711894,-79.750177
+Zone181,Brampton (East),43.685832,-79.7599366
+Zone182,Oakville,43.447436,-79.666672
+Zone183,Caledon,43.827060149999994,-79.9061036956765
+Zone184,Richmond Hill/Vaughan/King,43.902078,-79.428887
+Zone185,"Aurora, Newmkt, Whit-St.",45.469813,-73.668092
+Zone186,Markham,43.8563707,-79.3376825
+Zone187,Pickering/Ajax/Uxbridge,39.138382,-75.409297
+Zone188,Milton/Halton Hills,43.6512888,-79.9142216
+Zone189,Orangeville/Mono,43.91515,-80.112472
+Zone190,Bradford/West Gwillimbury/New Tecumseth,44.14125,-79.395028
+Zone191,Centre,44.08139,-77.42417
+Zone192,East Inner,49.300927,-123.093987
+Zone193,East Outer,49.30736,-123.20767
+Zone194,Amherstburg,42.1013315,-83.1086458
+Zone195,Fort Rouge,48.88332,-72.08247
+Zone196,Centennial,49.834714,-99.9771574
+Zone197,Midland,44.750147,-79.885712
+Zone198,Lord Selkirk,38.85539,-77.3036
+Zone199,St. James,49.882432,-97.2262639
+Zone200,West Kildonan,49.9433509,-97.1301761
+Zone201,East Kildonan,49.9209415,-97.0881378
+Zone202,Transcona,50.46671,-104.64916
+Zone203,St. Boniface,46.505246,-72.828712
+Zone204,St. Vital,49.8237577,-97.0996409
+Zone205,Fort Garry,26.121044,-80.142951
+Zone206,Assiniboine Park,49.859645,-97.2407632
+Zone207,South: Lakeview/Albert Park,50.40143,-104.63111
+Zone208,South: Wascana University,42.278999,-83.730437
+Zone209,Southeast,53.4231146,-113.427807
+Zone210,Beltline,51.0404978,-114.0725934
+Zone211,North Hill,43.902078,-79.428887
+Zone212,Chinook,51.44921,-110.9236498
+Zone213,Fish Creek,52.61678,-106.15114
+Zone214,Other Centres,29.73719,-82.46011
+Zone215,Hudson's Bay Reserve,56.179703,-98.381394
+Zone216,University,41.513101,-81.607469
+Zone217,West Central,47.569667,-52.720671
+Zone218,Jasper Place,53.540691,-113.5986874
+Zone219,West Jasper Place,53.5364576,-113.584052
+Zone220,South West,44.18035,-77.578647
+Zone221,East Central,44.9730785,-78.25811290039293
+Zone222,Millwoods,,
+Zone223,North Central,49.884628,-119.483224
+Zone224,North East,43.76681,-79.4163
+Zone225,Castledown,,
+Zone226,St. Albert,53.633239,-113.628845
+Zone227,Other Outlying Areas,,
+Zone228,Fort Saskatchewan,53.7128571,-113.2148942
+Zone229,Leduc,53.2607825,-113.5511681
+Zone230,Spruce Grove,53.545204,-113.903503
+Zone231,Stony Plain,53.5289862,-114.004873
+Zone232,Strathcona County,53.58574,-113.10009
+Zone233,Lethbridge,49.6945782,-112.8331033
+Zone234,Abbotsford,49.0521162,-122.329479
+Zone235,Mission,49.1589351,-122.283583
+Zone236,Core Area,43.451165,-80.491708
+Zone237,Rutland,49.901763,-119.396929
+Zone238,West End/Stanley Park,39.08594,-77.16498
+Zone239,English Bay,46.373112,-79.4291
+Zone240,South Granville/Oak,46.40013,-63.46541
+Zone241,Kitsilano/Point Grey,49.697383200000004,-98.07351812056754
+Zone242,Westside/Kerrisdale,49.88307,-119.53568
+Zone243,Marpole,49.2092233,-123.1361495
+Zone244,Mount Pleasant/Renfrew Heights,,
+Zone245,East Hastings,45.8264443,-64.1213627
+Zone246,Southeast Vancouver,49.2608724,-123.113952
+Zone247,University Endowment Lands,49.25766695,-123.21724950249359
+Zone248,Central Park/Metrotown,45.36876,-75.73668
+Zone249,Southeast Burnaby,49.2433804,-122.972545
+Zone250,North Burnaby,49.2433804,-122.972545
+Zone251,New Westminster,49.2067726,-122.9108818
+Zone252,North Vancouver CY,49.3206294,-123.0737925
+Zone253,North Vancouver DM,49.3206294,-123.0737925
+Zone254,West Vancouver,49.3311208,-123.159479
+Zone255,Richmond,49.163168,-123.137414
+Zone256,Delta,49.0846258,-123.057938
+Zone257,Surrey,49.1913033,-122.849143
+Zone258,White Rock,49.0235357,-122.797924
+Zone259,Langley City and Langley DM,,
+Zone260,Tri-Cities,55.43338,-116.71923
+Zone261,Maple Ridge/Pitt Meadows,48.9936523,-58.0558122
+Zone262,Cook St. Area,53.63344,-113.63533
+Zone263,Fort St. Area,56.752082,-111.449452
+Zone264,James Bay Area,46.19695,-59.95698
+Zone265,Remainder of City,42.38341,-83.10241
+Zone266,Saanich/Central Saanich,48.5946782,-123.4207265
+Zone267,Esquimalt,48.429995,-123.41359
+Zone268,Langford/Vw Royal/Colwood/Sooke,48.3825724,-123.7315177
+Zone269,Oak Bay,48.4261126,-123.3170727
+Zone270,North Saanich,48.6563671,-123.4327941
+Zone271,Sidney,48.6505788,-123.3983246
+Zone272,Saint-Lin-Laurentides V,47.50771,0.2572
