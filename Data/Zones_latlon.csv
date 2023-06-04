@@ -1,7 +1,7 @@
 Zone_id,Zones,Lat,Lon
 Zone1,St. John's East,40.55588,-84.08356
 Zone2,St. John's West,40.55588,-84.08356
-Zone3,Remainder of CMA,,
+Zone3,Remainder of CMA,0.0,0.0
 Zone4,Peninsula South,45.28654565,-81.69690831989215
 Zone5,Peninsula North,41.491682,-81.696249
 Zone6,Mainland South,-6.28862,106.71789
@@ -21,16 +21,16 @@ Zone19,South,43.506433,-80.218968
 Zone20,West,50.8486905,2.9463932
 Zone21,North,43.572112,-80.248328
 Zone22,East,43.597482,-81.306542
-Zone23,Outlying Areas,,
+Zone23,Outlying Areas,0.0,0.0
 Zone24,North Sector,48.827532,-123.667755
 Zone25,Chicoutimi-Sud,48.433309,-71.066706
 Zone26,Jonquière,48.405959,-71.069183
-Zone27,La Baie,45.365147199999996,-75.84126216589354
+Zone27,La Baie,45.3651472,-75.84126216589354
 Zone28,Downtown Montréal/Îles-des-Soeurs,42.312852,-83.03605
 Zone29,Sud-Ouest/Verdun,45.459078,-73.5731774
 Zone30,LaSalle,42.21807995,-83.06409000924808
-Zone31,ND-de-Grâce/Ct-St-Luc etc.,,
-Zone32,Ct-des-Neiges/Mt-Royal/Outremont,,
+Zone31,ND-de-Grâce/Ct-St-Luc etc.,0.0,0.0
+Zone32,Ct-des-Neiges/Mt-Royal/Outremont,0.0,0.0
 Zone33,Plateau-Mont-Royal,45.523889,-73.578776
 Zone34,Villeray/St-Michel/Pc-Extension,50.745226,2.260741
 Zone35,Hochelaga-Maisonneuve,45.55865,-73.53736
@@ -50,7 +50,7 @@ Zone48,Pont-Viau,45.571727,-73.6802464
 Zone49,St-François/St-Vincent/Duvernay,46.0637,-72.81906
 Zone50,Vimont/Auteuil,45.612091,-73.728793
 Zone51,Laval-Ouest/Fabreville/Ste-Rose,45.55008,-73.86589
-Zone52,Mirabel/Oka/Pointe-Calumet etc.,,
+Zone52,Mirabel/Oka/Pointe-Calumet etc.,0.0,0.0
 Zone53,Blainville/Ste-Thérèse etc.,45.688505,-73.853123
 Zone54,Mascouche/Terrebonne etc.,45.76131,-73.608999
 Zone55,L'Assomption/Lavaltrie etc.,45.876281,-73.413012
@@ -59,7 +59,7 @@ Zone57,Longueuil,45.521906,-73.4644578
 Zone58,Boucherville/Brossard etc.,45.596742,-73.426916
 Zone59,Beauharnois/La Prairie/Léry etc.,46.64264,-60.96583
 Zone60,Beloeil/McMasterville etc.,45.582563,-73.212892
-Zone61,Carignan/Chambly/St-Mathias etc.,,
+Zone61,Carignan/Chambly/St-Mathias etc.,0.0,0.0
 Zone62,ND-de-L'île-Perrot/Pincourt etc.,52.233934,11.523874
 Zone63,Saint-Jean,46.921801,-70.889475
 Zone64,Iberville,45.3039219,-73.2297415
@@ -68,7 +68,7 @@ Zone66,Saint-Lin–Laurentides V,45.571593,-73.947887
 Zone67,Hull,45.4405842,-75.7326823
 Zone68,Aylmer,42.773227,-80.983658
 Zone69,Gatineau,45.4277659,-75.710976
-Zone70,Peripheral,,
+Zone70,Peripheral,0.0,0.0
 Zone71,Haute-Ville,49.21679,-66.06548
 Zone72,Basse-Ville,45.4324898,-75.6893758
 Zone73,Sainte-Foy-Sillery,45.40008,-73.58248
@@ -92,7 +92,7 @@ Zone90,Magog,45.2658014,-72.1480686
 Zone91,Fleurimont,45.4063675,-71.8385173
 Zone92,Lennoxville,45.3661982,-71.8564428
 Zone93,Downtown,41.81636,-87.869964
-Zone94,UQTR Sector,,
+Zone94,UQTR Sector,0.0,0.0
 Zone95,Trois-Rivières-Ouest,46.3275756,-72.5994371
 Zone96,Pointe-du-Lac/Yamachiche,46.282428,-72.830772
 Zone97,Cap-de-la-Madeleine,46.368253,-72.509079
@@ -109,9 +109,9 @@ Zone107,East End,49.845348,-99.9278776
 Zone108,Central,47.569667,-52.720671
 Zone109,West End,50.5496565,-102.418496
 Zone110,Mountain,36.681391,-121.602478
-Zone111,Grimsby and Stoney Creek,,
+Zone111,Grimsby and Stoney Creek,0.0,0.0
 Zone112,Burlington,43.3248924,-79.7966835
-Zone113,Ancast./Dundas/Flambor./Glanbrk.,,
+Zone113,Ancast./Dundas/Flambor./Glanbrk.,0.0,0.0
 Zone114,Downtown Kingston,50.452985,-104.61401
 Zone115,Southwestern Kingston,44.263277,-76.524396
 Zone116,Northern Kingston,48.0166,-53.99812
@@ -144,15 +144,15 @@ Zone142,Glebe/Old Ottawa South,54.30199,-8.25254
 Zone143,Alta Vista,45.3865483,-75.6625397
 Zone144,Carlington/Iris,17.72861,-95.4225
 Zone145,Chinatown/Hintonburg/Westboro N,45.40379,-75.7283
-Zone146,New Edinb./Manor Park/Overbrook,,
-Zone147,Westboro S/Hampton Pk/Britannia,,
+Zone146,New Edinb./Manor Park/Overbrook,0.0,0.0
+Zone147,Westboro S/Hampton Pk/Britannia,0.0,0.0
 Zone148,Hunt Club/South Keys,45.338015,-75.711276
 Zone149,Vanier,45.4364072,-75.6619152
 Zone150,Gloucester North/Orleans,39.893757,-75.121178
 Zone151,Eastern Ottawa Surrounding Areas,44.61685,-63.48199
 Zone152,Nepean,45.3446891,-75.7639408
 Zone153,Western Ottawa Surrounding Areas,43.990992,-64.664154
-Zone154,North Grenville MU,44.985842649999995,-75.64483041274728
+Zone154,North Grenville MU,44.98584265,-75.64483041274728
 Zone155,Lockerby,44.32004,-81.22948
 Zone156,New Sudbury,47.15188,-68.50499
 Zone157,Old Sudbury,47.1089348,-81.2633416
@@ -181,7 +181,7 @@ Zone179,Mississauga (Northeast),43.5896231,-79.6443879
 Zone180,Brampton (West),43.711894,-79.750177
 Zone181,Brampton (East),43.685832,-79.7599366
 Zone182,Oakville,43.447436,-79.666672
-Zone183,Caledon,43.827060149999994,-79.9061036956765
+Zone183,Caledon,43.82706015,-79.9061036956765
 Zone184,Richmond Hill/Vaughan/King,43.902078,-79.428887
 Zone185,"Aurora, Newmkt, Whit-St.",45.469813,-73.668092
 Zone186,Markham,43.8563707,-79.3376825
@@ -220,12 +220,12 @@ Zone218,Jasper Place,53.540691,-113.5986874
 Zone219,West Jasper Place,53.5364576,-113.584052
 Zone220,South West,44.18035,-77.578647
 Zone221,East Central,44.9730785,-78.25811290039293
-Zone222,Millwoods,,
+Zone222,Millwoods,0.0,0.0
 Zone223,North Central,49.884628,-119.483224
 Zone224,North East,43.76681,-79.4163
-Zone225,Castledown,,
+Zone225,Castledown,0.0,0.0
 Zone226,St. Albert,53.633239,-113.628845
-Zone227,Other Outlying Areas,,
+Zone227,Other Outlying Areas,0.0,0.0
 Zone228,Fort Saskatchewan,53.7128571,-113.2148942
 Zone229,Leduc,53.2607825,-113.5511681
 Zone230,Spruce Grove,53.545204,-113.903503
@@ -239,13 +239,13 @@ Zone237,Rutland,49.901763,-119.396929
 Zone238,West End/Stanley Park,39.08594,-77.16498
 Zone239,English Bay,46.373112,-79.4291
 Zone240,South Granville/Oak,46.40013,-63.46541
-Zone241,Kitsilano/Point Grey,49.697383200000004,-98.07351812056754
+Zone241,Kitsilano/Point Grey,49.6973832,-98.07351812056754
 Zone242,Westside/Kerrisdale,49.88307,-119.53568
 Zone243,Marpole,49.2092233,-123.1361495
-Zone244,Mount Pleasant/Renfrew Heights,,
+Zone244,Mount Pleasant/Renfrew Heights,0.0,0.0
 Zone245,East Hastings,45.8264443,-64.1213627
 Zone246,Southeast Vancouver,49.2608724,-123.113952
-Zone247,University Endowment Lands,49.25766695,-123.21724950249359
+Zone247,University Endowment Lands,49.25766695,-123.2172495024936
 Zone248,Central Park/Metrotown,45.36876,-75.73668
 Zone249,Southeast Burnaby,49.2433804,-122.972545
 Zone250,North Burnaby,49.2433804,-122.972545
@@ -257,7 +257,7 @@ Zone255,Richmond,49.163168,-123.137414
 Zone256,Delta,49.0846258,-123.057938
 Zone257,Surrey,49.1913033,-122.849143
 Zone258,White Rock,49.0235357,-122.797924
-Zone259,Langley City and Langley DM,,
+Zone259,Langley City and Langley DM,0.0,0.0
 Zone260,Tri-Cities,55.43338,-116.71923
 Zone261,Maple Ridge/Pitt Meadows,48.9936523,-58.0558122
 Zone262,Cook St. Area,53.63344,-113.63533
