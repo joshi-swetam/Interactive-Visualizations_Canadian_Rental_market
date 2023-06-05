@@ -1,0 +1,862 @@
+Neighbourhood_id,Neighbourhood
+Neighbourhood1,St. John's East
+Neighbourhood2,St. John's West
+Neighbourhood3,Remainder of CMA
+Neighbourhood4,Downtown Halifax
+Neighbourhood5,South End
+Neighbourhood6,Peninsula Southwest
+Neighbourhood7,Peninsula Northwest
+Neighbourhood8,North End
+Neighbourhood9,Armdale
+Neighbourhood10,Spryfield/Herring Cove
+Neighbourhood11,Fairmount
+Neighbourhood12,Fairview
+Neighbourhood13,Clayton Park/Rockingham
+Neighbourhood14,Bedford South
+Neighbourhood15,Wyse Road
+Neighbourhood16,Albro Lake/Lake Banook
+Neighbourhood17,Burnside/Tufts Cove
+Neighbourhood18,Downtown Dartmouth
+Neighbourhood19,Woodside/Eastern Passage
+Neighbourhood20,Portland Estates/Morris Lake
+Neighbourhood21,Woodlawn/Forest Hills/Port Wallace
+Neighbourhood22,Cole Harbour
+Neighbourhood23,Bedford
+Neighbourhood24,Sackville
+Neighbourhood25,Timberlea/Beechville
+Neighbourhood26,Hammonds Plains
+Neighbourhood27,Herring Cove/Terence Bay/Prospect etc.
+Neighbourhood28,Waverley/Fall River/Beaverbank
+Neighbourhood29,Halifax County East
+Neighbourhood30,Downtown Moncton
+Neighbourhood31,Garden Hill
+Neighbourhood32,West Moncton
+Neighbourhood33,Sunny Brae
+Neighbourhood34,Lewisville/Harrisville
+Neighbourhood35,Humphrey
+Neighbourhood36,Magnetic Hill/Irishtown
+Neighbourhood37,Parkton
+Neighbourhood38,North End/Ryan Road/Hildegarde
+Neighbourhood39,Riverview
+Neighbourhood40,Downtown Dieppe
+Neighbourhood41,St. Anselme
+Neighbourhood42,Fox Creek/Lakeburn
+Neighbourhood43,Southern Remainder of Moncton CMA
+Neighbourhood44,Northern Remainder of Moncton CMA
+Neighbourhood45,Uptown
+Neighbourhood46,West
+Neighbourhood47,Indian Town
+Neighbourhood48,Millidgeville
+Neighbourhood49,East
+Neighbourhood50,Rothesay
+Neighbourhood51,Quipspamsis
+Neighbourhood52,Saint Martins/Hampton
+Neighbourhood53,Eastern Saint John CMA
+Neighbourhood54,Chicoutimi-Nord
+Neighbourhood55,Northern Outskirts
+Neighbourhood56,Chicoutimi Downtown
+Neighbourhood57,Chicoutimi-Sud
+Neighbourhood58,Jonquière Downtown
+Neighbourhood59,Jonquière
+Neighbourhood60,Southern Outskirts
+Neighbourhood61,La Baie
+Neighbourhood62,Ville-Marie
+Neighbourhood63,Île-des-Soeurs
+Neighbourhood64,Verdun
+Neighbourhood65,South West
+Neighbourhood66,LaSalle
+Neighbourhood67,Westmount
+Neighbourhood68,Notre-Dame-de-Grâce
+Neighbourhood69,Hampstead/Côte-Saint-Luc
+Neighbourhood70,Côte-Saint-Luc/Montreal West
+Neighbourhood71,Côte-des-Neiges
+Neighbourhood72,Outremont
+Neighbourhood73,Mont-Royal
+Neighbourhood74,Plateau-Mont-Royal
+Neighbourhood75,Parc-Extension
+Neighbourhood76,Villeray
+Neighbourhood77,Saint-Michel
+Neighbourhood78,East Ville-Marie
+Neighbourhood79,Hochelaga-Maisonneuve
+Neighbourhood80,Rosemont/La Petite-Patrie
+Neighbourhood81,Saint-Léonard
+Neighbourhood82,Anjou
+Neighbourhood83,Montréal-Nord
+Neighbourhood84,Ahuntsic
+Neighbourhood85,Cartierville
+Neighbourhood86,Saint-Laurent
+Neighbourhood87,Lachine
+Neighbourhood88,Dorval/Île-Dorval
+Neighbourhood89,Pointe-Claire
+Neighbourhood90,Beaconsfield-Kirkland
+Neighbourhood91,Ste-Anne-de-Bellevue/Baie-d'Urfé
+Neighbourhood92,Dollard-des-Ormeaux
+Neighbourhood93,Senneville/Roxboro-Pierrefonds
+Neighbourhood94,L'Île-Bizard/Sainte-Geneviève
+Neighbourhood95,Mercier
+Neighbourhood96,Montréal-Est
+Neighbourhood97,Pointe-aux-Trembles
+Neighbourhood98,Rivière-des-Prairies
+Neighbourhood99,Sainte-Dorothée
+Neighbourhood100,Chomedey
+Neighbourhood101,Laval-des-Rapides
+Neighbourhood102,Pont-Viau
+Neighbourhood103,Duvernay
+Neighbourhood104,Saint-Vincent-de-Paul
+Neighbourhood105,Saint-François
+Neighbourhood106,Vimont
+Neighbourhood107,Auteuil
+Neighbourhood108,Sainte-Rose
+Neighbourhood109,Fabreville
+Neighbourhood110,Laval-Ouest
+Neighbourhood111,Deux-Montagnes
+Neighbourhood112,Sainte-Marthe-sur-le-Lac
+Neighbourhood113,Saint-Eustache
+Neighbourhood114,St-Joseph-du-Lac/Pte-Calumet/Oka
+Neighbourhood115,Mirabel/Saint-Placide
+Neighbourhood116,Boisbriand
+Neighbourhood117,Sainte-Thérèse
+Neighbourhood118,Lorraine/Rosemère/Blainville
+Neighbourhood119,Bois-des-Filion
+Neighbourhood120,Sainte-Anne-des-Plaines
+Neighbourhood121,Terrebonne
+Neighbourhood122,Lachenaie
+Neighbourhood123,Mascouche
+Neighbourhood124,La Plaine
+Neighbourhood125,Charlemagne
+Neighbourhood126,Repentigny
+Neighbourhood127,Le Gardeur
+Neighbourhood128,L'Assomption/St-Sulpice
+Neighbourhood129,L'Épiphanie/St-Gerard-Majella
+Neighbourhood130,Lavaltrie
+Neighbourhood131,Saint-Antoine
+Neighbourhood132,Saint-Jérôme
+Neighbourhood133,Lafontaine
+Neighbourhood134,Bellefeuille/St-Colomban/Gore
+Neighbourhood135,Longueuil
+Neighbourhood136,Saint-Lambert
+Neighbourhood137,Lemoyne
+Neighbourhood138,Greenfield Park
+Neighbourhood139,Brossard
+Neighbourhood140,Saint-Hubert
+Neighbourhood141,Boucherville
+Neighbourhood142,La Prairie
+Neighbourhood143,Candiac
+Neighbourhood144,Delson
+Neighbourhood145,Sainte-Catherine
+Neighbourhood146,St-Constant/St-Mathieu/St-Philippe
+Neighbourhood147,Châteauguay/Léry
+Neighbourhood148,Saint-Isidore/Ville de Mercier
+Neighbourhood149,Maple Grove/Beauharnois
+Neighbourhood150,Saint-Bruno-de-Montarville
+Neighbourhood151,Saint-Basile-le-Grand
+Neighbourhood152,McMasterville
+Neighbourhood153,Beloeil
+Neighbourhood154,Ste-Julie/St-Mathieu-de-Beloeil
+Neighbourhood155,Saint-Amable
+Neighbourhood156,Varennes
+Neighbourhood157,Verchères
+Neighbourhood158,Otterburn Park
+Neighbourhood159,Mont-Saint-Hilaire
+Neighbourhood160,St-Mathias-sur-Richelieu
+Neighbourhood161,Carignan/Chambly
+Neighbourhood162,Richelieu
+Neighbourhood163,N.D.-Île-Perr./Pinc./T.-Vaudr./Île-Perr.
+Neighbourhood164,Vaudreuil-Soulanges North
+Neighbourhood165,Vaudreuil-Soulanges South
+Neighbourhood166,St-Lazare/Hudson
+Neighbourhood167,Saint-Jean
+Neighbourhood168,Iberville
+Neighbourhood169,Saint-Athanase
+Neighbourhood170,L'Acadie/Saint-Luc
+Neighbourhood171,Saint-Lin–Laurentides V
+Neighbourhood172,Centre-ville
+Neighbourhood173,Lac-des-Fées/Mont-Bleu/Hautes-Plaines
+Neighbourhood174,Les Golfs
+Neighbourhood175,Lac-Deschênes
+Neighbourhood176,Le Plateau
+Neighbourhood177,Rivière-Gatineau/Les Rapides
+Neighbourhood178,Du Moulin
+Neighbourhood179,Rivière-Blanche
+Neighbourhood180,Masson-Angers
+Neighbourhood181,Buckingham
+Neighbourhood182,Cantley
+Neighbourhood183,Gatineau CMA Remainder
+Neighbourhood184,Vieux-Port
+Neighbourhood185,Cap-Blanc/Vieux-Québec/St-Jean-Baptiste
+Neighbourhood186,Montcalm (Plateau)
+Neighbourhood187,Saint-Sacrement
+Neighbourhood188,Saint-Roch
+Neighbourhood189,Saint-Sauveur
+Neighbourhood190,Limoilou
+Neighbourhood191,Sillery
+Neighbourhood192,Haut de Sainte-Foy
+Neighbourhood193,Pointe-de-Sainte-Foy
+Neighbourhood194,Vanier
+Neighbourhood195,Duberger
+Neighbourhood196,Les Saules
+Neighbourhood197,Lebourgneuf
+Neighbourhood198,Beauport (Giffard)
+Neighbourhood199,Beauport (Centre)
+Neighbourhood200,Beauport (Villeneuve)
+Neighbourhood201,Beauport Ste-Thérèse/Boischâtel etc.
+Neighbourhood202,Charlesbourg (Centre)
+Neighbourhood203,Charlesbourg (Orsainville)
+Neighbourhood204,Charlesbourg (North)
+Neighbourhood205,Neufchâtel
+Neighbourhood206,Loretteville
+Neighbourhood207,St-Émile/Lac-St-Charles
+Neighbourhood208,L'Ancienne-Lorette
+Neighbourhood209,Quartier Laurentien
+Neighbourhood210,Val-Bélair
+Neighbourhood211,Cap-Rouge
+Neighbourhood212,Saint-Augustin-de-Desmaures
+Neighbourhood213,North-West Québec CMA
+Neighbourhood214,North-East Québec CMA
+Neighbourhood215,Québec City East CMA
+Neighbourhood216,Saint-Nicolas/Bernières
+Neighbourhood217,Saint-Rédempteur
+Neighbourhood218,Saint-Étienne
+Neighbourhood219,Saint-Romuald
+Neighbourhood220,Charny
+Neighbourhood221,Saint-Jean-Chrysostome
+Neighbourhood222,St-Lambert-de-Lauzon etc.
+Neighbourhood223,Lévis (Saint-David)
+Neighbourhood224,Lévis (Centre)
+Neighbourhood225,Lévis (Lauzon)
+Neighbourhood226,Beaumont/St-Joseph-Pte-de-Lévy/Pintendre
+Neighbourhood227,Saint-Henri
+Neighbourhood228,East District
+Neighbourhood229,Central District
+Neighbourhood230,Mont-Bellevue
+Neighbourhood231,North District
+Neighbourhood232,Brompton
+Neighbourhood233,Rock-Forest–St-Elie–Deauville
+Neighbourhood234,Magog
+Neighbourhood235,Fleurimont
+Neighbourhood236,Lennoxville
+Neighbourhood237,Downtown (Central)
+Neighbourhood238,Downtown (North)
+Neighbourhood239,Downtown (East)
+Neighbourhood240,UQTR Sector
+Neighbourhood241,North Sector
+Neighbourhood242,Trois-Rivières-Ouest (South)
+Neighbourhood243,Trois-Rivières-Ouest (North)
+Neighbourhood244,Pointe-du-Lac/Yamachiche
+Neighbourhood245,Cap-de-la-Madeleine (South)
+Neighbourhood246,Cap-de-la-Madeleine (North)
+Neighbourhood247,Ste-Marthe-du-Cap
+Neighbourhood248,St-Louis-de-France
+Neighbourhood249,Champlain/St-Maurice/St-Luc-de-Vincennes
+Neighbourhood250,Bécancour (East)
+Neighbourhood251,Bécancour (West)
+Neighbourhood252,Downtown
+Neighbourhood253,West End
+Neighbourhood254,North Barrie
+Neighbourhood255,East End
+Neighbourhood256,South Barrie
+Neighbourhood257,Springwater
+Neighbourhood258,Innisfil
+Neighbourhood259,Belleville (Southwest)
+Neighbourhood260,Belleville (Northwest)
+Neighbourhood261,Belleville (East)
+Neighbourhood262,Belleville (Rural)
+Neighbourhood263,Quinte West (East)
+Neighbourhood264,Quinte West (West)
+Neighbourhood265,Brantford Core
+Neighbourhood266,Brantford East
+Neighbourhood267,Terrace Hill
+Neighbourhood268,Brantford North
+Neighbourhood269,Brantford West
+Neighbourhood270,Brant
+Neighbourhood271,Central
+Neighbourhood272,South
+Neighbourhood273,Guelph/Eramosa and Puslinch
+Neighbourhood274,Downtown A
+Neighbourhood275,Downtown B
+Neighbourhood276,Downtown C
+Neighbourhood277,Central East A
+Neighbourhood278,Central East B
+Neighbourhood279,East End A
+Neighbourhood280,East End B
+Neighbourhood281,Central C
+Neighbourhood282,Central A
+Neighbourhood283,Central B
+Neighbourhood284,West End A
+Neighbourhood285,West End B
+Neighbourhood286,Mountain D
+Neighbourhood287,Mountain C
+Neighbourhood288,Mountain A
+Neighbourhood289,Mountain B
+Neighbourhood290,Stoney Creek
+Neighbourhood291,Grimsby
+Neighbourhood292,Aldershot
+Neighbourhood293,Burlington (Southwest)
+Neighbourhood294,Burlington (East)
+Neighbourhood295,Burlington (Northwest)
+Neighbourhood296,Burlington (Rural)
+Neighbourhood297,Dundas
+Neighbourhood298,Flamborough
+Neighbourhood299,Ancaster
+Neighbourhood300,Glanbrook
+Neighbourhood301,Queens/Alwington
+Neighbourhood302,Sydenham
+Neighbourhood303,Williamsville
+Neighbourhood304,Inner Harbour
+Neighbourhood305,Portsmouth
+Neighbourhood306,Sunnyside
+Neighbourhood307,Polson Park/Calvin Park
+Neighbourhood308,Kingscourt
+Neighbourhood309,Rideau Heights
+Neighbourhood310,Markers Acres/Sutherland Park
+Neighbourhood311,Novelis
+Neighbourhood312,Strathcona
+Neighbourhood313,Grenville/Hillendale
+Neighbourhood314,Waterloo Village
+Neighbourhood315,Auden Park/Henderson/Reddendale
+Neighbourhood316,Kingston CMA Remainder
+Neighbourhood317,Loyalist/S. Frontenac/Frontenac Islands
+Neighbourhood318,Kitchener South-Central
+Neighbourhood319,Kitchener North-East
+Neighbourhood320,Kitchener South-East
+Neighbourhood321,Kitchener Central
+Neighbourhood322,Kitchener South-West
+Neighbourhood323,Kitchener North-West
+Neighbourhood324,Waterloo Uptown
+Neighbourhood325,Waterloo University
+Neighbourhood326,Waterloo North-West
+Neighbourhood327,Waterloo North-East
+Neighbourhood328,Preston Core
+Neighbourhood329,Galt West
+Neighbourhood330,Galt East
+Neighbourhood331,Preston Outside Core
+Neighbourhood332,Hespeler
+Neighbourhood333,Woolwich & North Dumfries
+Neighbourhood334,Downtown North
+Neighbourhood335,Carling
+Neighbourhood336,Huron Heights
+Neighbourhood337,North London/Masonville
+Neighbourhood338,Stoney Creek/Upland/Stoneybrook
+Neighbourhood339,West London
+Neighbourhood340,Oakridge
+Neighbourhood341,Medway
+Neighbourhood342,Hyde Park
+Neighbourhood343,Southcrest
+Neighbourhood344,Byron/Riverbend
+Neighbourhood345,Westmount/Highland/Talbot
+Neighbourhood346,Central South
+Neighbourhood347,White Oaks/Highland
+Neighbourhood348,Glen Cairn/Westminster
+Neighbourhood349,London Remainder
+Neighbourhood350,East London
+Neighbourhood351,Hamilton Rd
+Neighbourhood352,Airport/Argyle/Crumlin
+Neighbourhood353,St. Thomas (West)
+Neighbourhood354,St. Thomas (South)
+Neighbourhood355,St. Thomas (East)
+Neighbourhood356,St. Thomas (North)
+Neighbourhood357,Strathroy-Caradoc
+Neighbourhood358,Downtown St. Catharines
+Neighbourhood359,South Louth/Western Hills
+Neighbourhood360,Marsdale
+Neighbourhood361,Merritton
+Neighbourhood362,Niagara Falls
+Neighbourhood363,Clifton Hill
+Neighbourhood364,Lundy's Lane
+Neighbourhood365,Corwin Crescent
+Neighbourhood366,Queensway Garden/Stamford Centre
+Neighbourhood367,Niagara Falls South
+Neighbourhood368,Drummond Heights
+Neighbourhood369,Orchard Park
+Neighbourhood370,Niagara South
+Neighbourhood371,Downtown Welland
+Neighbourhood372,Chippawa Park Area
+Neighbourhood373,Maple Park/Stop 19
+Neighbourhood374,Welland/Brookfield
+Neighbourhood375,Welland South
+Neighbourhood376,Thorold
+Neighbourhood377,Port Colbourne West
+Neighbourhood378,Humberstone
+Neighbourhood379,Port Colbourne East/Lorraine
+Neighbourhood380,Pelham/Wainfleet
+Neighbourhood381,Lincoln/Beamsville
+Neighbourhood382,Niagara-on-the-Lake
+Neighbourhood383,Fort Erie
+Neighbourhood384,Ridgemount/Ridgewood
+Neighbourhood385,Oshawa (North)
+Neighbourhood386,Oshawa (South/Central)
+Neighbourhood387,Whitby
+Neighbourhood388,Clarington
+Neighbourhood389,Lowertown
+Neighbourhood390,Sandy Hill
+Neighbourhood391,Glebe
+Neighbourhood392,Old Ottawa South
+Neighbourhood393,Alta Vista
+Neighbourhood394,Hampton Park
+Neighbourhood395,Carlington
+Neighbourhood396,Iris/Queensway Terrace/Whitehaven
+Neighbourhood397,West Centretown/Fisher Park
+Neighbourhood398,Chinatown/Hintonburg
+Neighbourhood399,Westboro North/Tunney's Pasture
+Neighbourhood400,New Edinburgh/Manor Park etc
+Neighbourhood401,Overbrook/Castle Heights
+Neighbourhood402,Westboro South
+Neighbourhood403,Britannia/Lincoln Heights
+Neighbourhood404,Hunt Club/South Keys
+Neighbourhood405,Beacon Hill/Cyrville
+Neighbourhood406,Gloucester/Western Orléans
+Neighbourhood407,Eastern Orléans/Eastern Ottawa
+Neighbourhood408,Clarence-Rockland
+Neighbourhood409,Knoxdale/Merivale/East College
+Neighbourhood410,Bayshore/Crystal Beach/West College
+Neighbourhood411,Barrhaven and Rural Nepean
+Neighbourhood412,Kanata/Stittsville
+Neighbourhood413,Rural Western Ottawa
+Neighbourhood414,North Grenville MU
+Neighbourhood415,Downtown Core
+Neighbourhood416,Peterborough(Central Excl Downtown Core)
+Neighbourhood417,City Westside
+Neighbourhood418,City East
+Neighbourhood419,City North
+Neighbourhood420,West of Otonabee River
+Neighbourhood421,East of Otonabee River
+Neighbourhood422,Lockerby
+Neighbourhood423,Minnow Lake
+Neighbourhood424,New Sudbury
+Neighbourhood425,Kingsmount/Downtown/Bell Park
+Neighbourhood426,Westend/Copper Cliff
+Neighbourhood427,Donovan/Flour Mill
+Neighbourhood428,Nickel Centre/Garson/Coniston
+Neighbourhood429,Valley East/Capreol
+Neighbourhood430,Rayside-Balfour
+Neighbourhood431,Onaping Falls/Walden
+Neighbourhood432,Lakehead University
+Neighbourhood433,Downtown/West End
+Neighbourhood434,College Hts/Grandview/Lakefront
+Neighbourhood435,Current River/Hudson Heights/Shuniah
+Neighbourhood436,Rural North Ward
+Neighbourhood437,Confederation College
+Neighbourhood438,Westfort/Green Acres/Hyde Park
+Neighbourhood439,Rural South Ward
+Neighbourhood440,Waterfront Communities -The Island
+Neighbourhood441,Moss Park/Regent Park
+Neighbourhood442,Cabbagetown-S. St. James Town
+Neighbourhood443,North St. James Town
+Neighbourhood444,Church-Yonge Corridor
+Neighbourhood445,Bay Street Corridor
+Neighbourhood446,Kensington-Chinatown
+Neighbourhood447,University/Annex
+Neighbourhood448,Rosedale
+Neighbourhood449,Riverdale
+Neighbourhood450,The Beaches
+Neighbourhood451,East End-Danforth
+Neighbourhood452,Woodbine Corridor/Greenwood-Coxwell
+Neighbourhood453,Playter Estates-Danforth
+Neighbourhood454,Moore Park
+Neighbourhood455,Yonge-St. Clair
+Neighbourhood456,Casa Loma
+Neighbourhood457,Forest Hill South
+Neighbourhood458,Yonge-Eglinton
+Neighbourhood459,Mount Pleasant West
+Neighbourhood460,Mount Pleasant East
+Neighbourhood461,Lawrence Park South
+Neighbourhood462,Lawrence Park North
+Neighbourhood463,Forest Hill North
+Neighbourhood464,South Parkdale/King West
+Neighbourhood465,Little Italy/Trinity-Bellwoods
+Neighbourhood466,Dufferin Grove/Little Portugal
+Neighbourhood467,Roncesvalles
+Neighbourhood468,High Park-Swansea
+Neighbourhood469,High Park North/Junction
+Neighbourhood470,Dovercourt/Davenport/Junction
+Neighbourhood471,Wychwood
+Neighbourhood472,Mimico
+Neighbourhood473,New Toronto
+Neighbourhood474,Long Branch
+Neighbourhood475,Alderwood
+Neighbourhood476,Islington/City Centre South
+Neighbourhood477,Stonegate-Queensway
+Neighbourhood478,Kingsway South
+Neighbourhood479,Islington/City Centre North
+Neighbourhood480,Etobicoke West Mall
+Neighbourhood481,Eringate-Centennial-West Deane
+Neighbourhood482,Princess-Rosethorn
+Neighbourhood483,Edenbridge-Humber Valley
+Neighbourhood484,Humber Heights-Westmount
+Neighbourhood485,Willowridge-Martingrove-Richview
+Neighbourhood486,Kingsview Village-The Westway
+Neighbourhood487,Elms-Old Rexdale
+Neighbourhood488,Rexdale-Kipling
+Neighbourhood489,West Humber-Clairville
+Neighbourhood490,Mt Olive-Jamestown etc.
+Neighbourhood491,Humewood-Cedarvale
+Neighbourhood492,Oakwood-Vaughan
+Neighbourhood493,Caledonia-Fairbank
+Neighbourhood494,Keelesdale-Eglinton West
+Neighbourhood495,Lambton Baby Point
+Neighbourhood496,Rockcliffe-Smythe
+Neighbourhood497,Mount Dennis
+Neighbourhood498,Weston
+Neighbourhood499,Beechborough-Greenbrook
+Neighbourhood500,Briar Hill-Belgravia
+Neighbourhood501,Broadview North
+Neighbourhood502,Danforth Village-East York
+Neighbourhood503,Woodbine-Lumsden
+Neighbourhood504,Crescent Town
+Neighbourhood505,O'Connor-Parkview
+Neighbourhood506,Old East York
+Neighbourhood507,Thorncliffe Park
+Neighbourhood508,Leaside-Bennington
+Neighbourhood509,Birchcliffe-Cliffside
+Neighbourhood510,Cliffcrest
+Neighbourhood511,Eglinton East
+Neighbourhood512,Kennedy Park
+Neighbourhood513,Clairlea-Birchmount
+Neighbourhood514,Wexford-Maryvale
+Neighbourhood515,Ionview
+Neighbourhood516,Dorset Park
+Neighbourhood517,Bendale
+Neighbourhood518,Tam O'Shanter-Sullivan
+Neighbourhood519,L'Amoreaux/Steeles/Milliken
+Neighbourhood520,Agincourt/Malvern
+Neighbourhood521,Scarborough Village
+Neighbourhood522,Guildwood
+Neighbourhood523,West Hill
+Neighbourhood524,Woburn
+Neighbourhood525,Morningside
+Neighbourhood526,Rouge
+Neighbourhood527,Flemingdon Park
+Neighbourhood528,Victoria Village
+Neighbourhood529,Banbury-Don Mills/York Mills
+Neighbourhood530,Parkwoods-Donalda
+Neighbourhood531,St. Andrew-Windfields
+Neighbourhood532,Henry Farm
+Neighbourhood533,Don Valley Village/Pleasant View
+Neighbourhood534,Bayview Village
+Neighbourhood535,Willowdale East/Newtonbrook East
+Neighbourhood536,Bayview Woods-Steeles/Hillcrest Village
+Neighbourhood537,Bedford Park-Nortown
+Neighbourhood538,Englemount-Lawrence
+Neighbourhood539,Yorkdale-Glen Park
+Neighbourhood540,Brookhaven-Amesbury
+Neighbourhood541,Maple Leaf
+Neighbourhood542,Rustic/Pelmo Park/Humberlea
+Neighbourhood543,Lansing-Westgate
+Neighbourhood544,Clanton Park
+Neighbourhood545,Bathurst Manor
+Neighbourhood546,Westminster-Branson
+Neighbourhood547,Willowdale West/Newtonbrook West
+Neighbourhood548,Downsview
+Neighbourhood549,Black Creek
+Neighbourhood550,Port Credit
+Neighbourhood551,Cooksville
+Neighbourhood552,Clarkson/Lorne Park
+Neighbourhood553,Churchill Meadows/Erin Mills
+Neighbourhood554,Meadowvale
+Neighbourhood555,Mississauga Centre/Streetsville
+Neighbourhood556,Malton
+Neighbourhood557,Brampton (West)
+Neighbourhood558,Brampton (East)
+Neighbourhood559,Bronte
+Neighbourhood560,Oakville (excl. Bronte)
+Neighbourhood561,Caledon
+Neighbourhood562,Richmond Hill/Vaughan/King
+Neighbourhood563,Whitchurch/Stouffville
+Neighbourhood564,Aurora
+Neighbourhood565,East Gwillimbury/Newmarket
+Neighbourhood566,Georgina
+Neighbourhood567,Markham
+Neighbourhood568,Ajax/Pickering
+Neighbourhood569,Uxbridge
+Neighbourhood570,Milton/Halton Hills
+Neighbourhood571,Orangeville/Mono
+Neighbourhood572,Bradford/West Gwillimbury/New Tecumseth
+Neighbourhood573,Walkerville
+Neighbourhood574,South Central
+Neighbourhood575,South Walkerville
+Neighbourhood576,East Walkerville
+Neighbourhood577,Riverside
+Neighbourhood578,Forest Glade
+Neighbourhood579,Fontainebleau
+Neighbourhood580,Remington Park
+Neighbourhood581,Southeast Windsor
+Neighbourhood582,University
+Neighbourhood583,Sandwich
+Neighbourhood584,Southwest Windsor
+Neighbourhood585,Amherstburg
+Neighbourhood586,South Osborne
+Neighbourhood587,Fort Rouge West
+Neighbourhood588,River-Osborne
+Neighbourhood589,Spence
+Neighbourhood590,West Alexander/Centennial
+Neighbourhood591,West Broadway
+Neighbourhood592,Wolseley
+Neighbourhood593,Point Douglas
+Neighbourhood594,Inkster
+Neighbourhood595,St. James East
+Neighbourhood596,St. James West
+Neighbourhood597,Seven Oaks
+Neighbourhood598,Garden City
+Neighbourhood599,Elmwood
+Neighbourhood600,Monroe
+Neighbourhood601,Rossmere-Concordia
+Neighbourhood602,Transcona
+Neighbourhood603,St. Boniface
+Neighbourhood604,Norwood
+Neighbourhood605,East St. Boniface
+Neighbourhood606,Old St. Vital
+Neighbourhood607,South St. Vital
+Neighbourhood608,Fort Garry North
+Neighbourhood609,Fort Richmond
+Neighbourhood610,Tuxedo
+Neighbourhood611,Charleswood
+Neighbourhood612,Outlying Areas
+Neighbourhood613,Downtown West
+Neighbourhood614,Downtown East
+Neighbourhood615,North Central
+Neighbourhood616,Southwest/Cathedral Area
+Neighbourhood617,Lakeview North
+Neighbourhood618,Lakeview South
+Neighbourhood619,Albert Park North
+Neighbourhood620,Albert Park South
+Neighbourhood621,Whitmore Park
+Neighbourhood622,Hillsdale
+Neighbourhood623,Northeast Arcola
+Neighbourhood624,Southeast Arcola
+Neighbourhood625,Rosemont/Mount Royal
+Neighbourhood626,Normanview
+Neighbourhood627,Coronation Park
+Neighbourhood628,Northeast
+Neighbourhood629,Northwest
+Neighbourhood630,West Central
+Neighbourhood631,Nutana North
+Neighbourhood632,Nutana South
+Neighbourhood633,Lakewood North
+Neighbourhood634,Lakewood South
+Neighbourhood635,East Central
+Neighbourhood636,University Heights
+Neighbourhood637,North
+Neighbourhood638,Confederation East
+Neighbourhood639,Lower Southwest
+Neighbourhood640,Confederation West
+Neighbourhood641,Upper Southwest
+Neighbourhood642,Downtown/Eau Claire
+Neighbourhood643,Scarboro/Sunalta
+Neighbourhood644,Misson/Beltline
+Neighbourhood645,Lower Mount Royal/Cliff Bungalow
+Neighbourhood646,Bankview
+Neighbourhood647,Rosedale/Sunnyside/Crescent Hts/Renfrew
+Neighbourhood648,Parkdale/St. Andrews Hts etc.
+Neighbourhood649,Bridgeland/Riverside
+Neighbourhood650,Altadore/South Calgary/CFB Currie etc.
+Neighbourhood651,North Glenmore Park/Lakeview
+Neighbourhood652,Killarney/Glengarry
+Neighbourhood653,Wildwood/Spruce Cliff/Shaganappi etc.
+Neighbourhood654,Glendale/Glenbrook
+Neighbourhood655,Rutland Park/Glamorgan
+Neighbourhood656,Strathcona Pk/Christie Pk/Patterson etc.
+Neighbourhood657,Valley Ridge/Crestmont/Cougar Ridge etc.
+Neighbourhood658,Forest Lawn/Forest Heights etc.
+Neighbourhood659,Dover/Southview/Inglewood/Alyth etc.
+Neighbourhood660,Southeast Industrial & Surrounding Comm.
+Neighbourhood661,McKenzie Towne/New Brighton etc.
+Neighbourhood662,Bowness
+Neighbourhood663,Winston Hts/Mountview/Tuxedo Park etc.
+Neighbourhood664,Mount Pleasant
+Neighbourhood665,N Haven/Upper N Haven/Thorncliffe etc.
+Neighbourhood666,Capitol Hill/Rosemont/Banff Trail
+Neighbourhood667,Montgomery/Point McKay/University Hts
+Neighbourhood668,Charleswood/Collingwood/Brentwood
+Neighbourhood669,Varsity
+Neighbourhood670,Dalhousie
+Neighbourhood671,Silver Springs/Scenic Acres/Tuscany
+Neighbourhood672,Ranchlands/Hawkwood/Citadel etc.
+Neighbourhood673,Sherwood/Kincora/Hamptons/Edgemont
+Neighbourhood674,Huntington Hills/Evanston etc.
+Neighbourhood675,Vista Heights/Skyline East/Pegasus etc.
+Neighbourhood676,Meridian/Franklin/Albert Pk/Radisson Hts
+Neighbourhood677,Marlborough Park/Marlborough/Abbeydale
+Neighbourhood678,Rundle/Pine Ridge/Monterey Park
+Neighbourhood679,Whitehorn/Temple
+Neighbourhood680,Falconridge/Castleridge etc.
+Neighbourhood681,Manchester Ind./Roxboro/Erlton
+Neighbourhood682,Windsor Pk/Meadowlark Pk/Britannia etc.
+Neighbourhood683,Bel-Aire/Mayfair/Kelvin Grove etc.
+Neighbourhood684,Fairview Industrial/Fairview/Kingsland
+Neighbourhood685,Willow Park/Acadia/Haysboro/Southwood
+Neighbourhood686,Braeside/Bayview/Palliser/Pump Hill etc.
+Neighbourhood687,Canyon Meadows/Woodlands/Woodbine etc.
+Neighbourhood688,Bridlewood/Evergreen/Shawnee Slope etc.
+Neighbourhood689,Airdrie
+Neighbourhood690,Cochrane
+Neighbourhood691,Calgary CMA Remainder
+Neighbourhood692,Grandin
+Neighbourhood693,Oliver
+Neighbourhood694,McCauley
+Neighbourhood695,Central McDougall
+Neighbourhood696,Queen Mary Park
+Neighbourhood697,Garneau
+Neighbourhood698,West Central (North)
+Neighbourhood699,Woodcroft/Inglewood
+Neighbourhood700,West Central (South)
+Neighbourhood701,South Jasper Place
+Neighbourhood702,Genwood/West Jasper Place
+Neighbourhood703,Britannia
+Neighbourhood704,North Jasper Place
+Neighbourhood705,North West Jasper Place
+Neighbourhood706,Thorncliffe/Aldergrove
+Neighbourhood707,Callingwood
+Neighbourhood708,South West Jasper Place
+Neighbourhood709,West Jasper Place/Rural
+Neighbourhood710,Southgate District
+Neighbourhood711,Confederation Park
+Neighbourhood712,Riverbend/Whitemud Creek
+Neighbourhood713,Central South West
+Neighbourhood714,Gateway Blvd West
+Neighbourhood715,Terwillegar/Rural Southwest
+Neighbourhood716,Bonny Doon
+Neighbourhood717,Strathearn/Holyrood
+Neighbourhood718,Capilano/Upper East Central
+Neighbourhood719,Lower East Central
+Neighbourhood720,North Millwoods
+Neighbourhood721,Central Millwoods
+Neighbourhood722,South Millwoods
+Neighbourhood723,Highlands/Alberta Ave.
+Neighbourhood724,Delton/Eastwood
+Neighbourhood725,Westwood
+Neighbourhood726,North Central (West)
+Neighbourhood727,North Central (East)
+Neighbourhood728,Beverly/Rundle Heights
+Neighbourhood729,Clairview
+Neighbourhood730,McLeod Park/Casselman
+Neighbourhood731,North East
+Neighbourhood732,Londonderry
+Neighbourhood733,Northmount/Evansdale
+Neighbourhood734,East Castle Downs
+Neighbourhood735,West Castledowns
+Neighbourhood736,St. Albert
+Neighbourhood737,Morinville
+Neighbourhood738,Devon
+Neighbourhood739,Edmonton CMA Remainder
+Neighbourhood740,Fort Saskatchewan
+Neighbourhood741,Leduc
+Neighbourhood742,Spruce Grove
+Neighbourhood743,Stony Plain
+Neighbourhood744,Sherwood Park
+Neighbourhood745,Strathcona County Remainder
+Neighbourhood746,South-Centre
+Neighbourhood747,South-East
+Neighbourhood748,Redwood
+Neighbourhood749,Lakeview
+Neighbourhood750,North-East
+Neighbourhood751,North-Centre
+Neighbourhood752,St. Edwards/Staffordville
+Neighbourhood753,Winston Churchill/Park Meadows
+Neighbourhood754,North-West
+Neighbourhood755,West-South
+Neighbourhood756,Varsity Village
+Neighbourhood757,West-North
+Neighbourhood758,Coalhurst
+Neighbourhood759,Coaldale
+Neighbourhood760,Barons/Nobleford/Picture Butte
+Neighbourhood761,Lethbridge County
+Neighbourhood762,Mill Lake
+Neighbourhood763,Abbotsford/McMillan
+Neighbourhood764,Townline/Clearbrook
+Neighbourhood765,Mt. Lehman/Aberdeen/Poplar
+Neighbourhood766,Whatcom/Sumas
+Neighbourhood767,Mission
+Neighbourhood768,Core Area
+Neighbourhood769,Rutland
+Neighbourhood770,West End/Stanley Park North
+Neighbourhood771,West End/Stanley Park South
+Neighbourhood772,English Bay
+Neighbourhood773,Downtown Central
+Neighbourhood774,North False Creek
+Neighbourhood775,South False Creek
+Neighbourhood776,South Granville
+Neighbourhood777,South Cambie
+Neighbourhood778,Kitsilano/Point Grey North
+Neighbourhood779,Kitsilano/Point Grey South
+Neighbourhood780,Point Grey
+Neighbourhood781,Kerrisdale
+Neighbourhood782,Westside/Kerrisdale Remainder
+Neighbourhood783,Marpole South
+Neighbourhood784,Marpole Remainder
+Neighbourhood785,Riley Park
+Neighbourhood786,Cedar Cottage
+Neighbourhood787,Renfrew
+Neighbourhood788,Downtown Eastside/Strathcona
+Neighbourhood789,Hastings/Grandview/Woodlands
+Neighbourhood790,Sunset
+Neighbourhood791,Fraser View/Killarny
+Neighbourhood792,Collingwood
+Neighbourhood793,University Endowment Lands
+Neighbourhood794,Central Park
+Neighbourhood795,Metrotown
+Neighbourhood796,Deer Lake
+Neighbourhood797,Southeast Burnaby South
+Neighbourhood798,Edmonds
+Neighbourhood799,Westside Heights
+Neighbourhood800,Capital Hill/Brentwood
+Neighbourhood801,University/Lougheed
+Neighbourhood802,New Westminster West
+Neighbourhood803,New Westminster East
+Neighbourhood804,Central Lonsdale
+Neighbourhood805,Lonsdale East
+Neighbourhood806,Lonsdale North
+Neighbourhood807,Lonsdale West
+Neighbourhood808,North Vancouver DM East
+Neighbourhood809,North Vancouver DM West
+Neighbourhood810,Ambleside
+Neighbourhood811,Dundrave/W Vancouver Remainder
+Neighbourhood812,Richmond City Centre
+Neighbourhood813,Sea Island
+Neighbourhood814,Richmond West
+Neighbourhood815,Richmond South
+Neighbourhood816,Richmond East
+Neighbourhood817,Tsawwassen
+Neighbourhood818,Ladner
+Neighbourhood819,North Delta
+Neighbourhood820,Surrey City Centre
+Neighbourhood821,Whalley
+Neighbourhood822,Guildford
+Neighbourhood823,Cloverdale/Fleetwood
+Neighbourhood824,Newton
+Neighbourhood825,South Surrey
+Neighbourhood826,White Rock
+Neighbourhood827,Langley CY
+Neighbourhood828,Langley DM
+Neighbourhood829,Coquitlam West
+Neighbourhood830,Coquitlam East
+Neighbourhood831,Port Coquitlam
+Neighbourhood832,Port Moody
+Neighbourhood833,Anmore/Belcarra/Metro Vancouver North
+Neighbourhood834,Pitt Meadows
+Neighbourhood835,Maple Ridge
+Neighbourhood836,Fairfield South
+Neighbourhood837,Fairfield North
+Neighbourhood838,Fairfield-Ross Bay
+Neighbourhood839,Rockland
+Neighbourhood840,Gonzales
+Neighbourhood841,Jubilee
+Neighbourhood842,Fernwood
+Neighbourhood843,James Bay South
+Neighbourhood844,James Bay North
+Neighbourhood845,Oaklands
+Neighbourhood846,Hillside-Quadra
+Neighbourhood847,Burnside
+Neighbourhood848,Vic West
+Neighbourhood849,Saanich/University
+Neighbourhood850,Saanich-Centre
+Neighbourhood851,Saanich-Other
+Neighbourhood852,Central Saanich
+Neighbourhood853,Esquimalt
+Neighbourhood854,View Royal
+Neighbourhood855,Langford
+Neighbourhood856,Colwood
+Neighbourhood857,West Shore/Other
+Neighbourhood858,Oak Bay South
+Neighbourhood859,Oak Bay North
+Neighbourhood860,North Saanich
+Neighbourhood861,Sidney
