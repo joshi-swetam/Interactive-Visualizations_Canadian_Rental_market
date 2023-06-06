@@ -95,6 +95,16 @@ def get_rental_information(p, c, z, n, y, dt):
 
     return jsonify(output)
 
+@app.route("/api/v1.0/renta_data/center_provinces")
+def get_rental_data_center_province():
+    rental_data = []
+    # get a list of unique province/center combinations using pymongo
+    # run a for loop for each row
+        # create an empty list
+        # call get_rental_information(province, center)
+        # add return value from get_rental_information to list
+
+    return jsonify(rental_data)
 
 @app.route("/api/v1.0/location_filter/provinces")
 def get_province():
@@ -118,6 +128,16 @@ def get_neighbourhood(province, center, zone):
     query = { "Location.Province": province, "Location.Center": center, "Location.Zone": zone }
     neighbourhood = list(rental_information.find(query).distinct("Location.Neighbourhood"))
     return jsonify(neighbourhood)
+
+@app.route("/api/v1.0/location_filter/years")
+def get_years():
+    years = list(rental_information.find().distinct("Year"))
+    return jsonify(years)
+
+@app.route("/api/v1.0/location_filter/dwellingtypes")
+def get_dwellingtypes():
+    dwellingtypes = list(rental_information.find().distinct("DwellingType"))
+    return jsonify(dwellingtypes)
 
 def get_query(p, c, z, n, y, dt):
     query = {}
