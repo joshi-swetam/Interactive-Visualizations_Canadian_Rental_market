@@ -1,0 +1,1 @@
+mongoimport --type json -d rental_data -c canadian_rental_market --drop --jsonArray rental_data.json
