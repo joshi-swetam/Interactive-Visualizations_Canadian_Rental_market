@@ -26,16 +26,30 @@ def index():
         f"Welcome to the Rental Data Analysis API!<br/>"
         f"Available Routes:<br/>"
         f"===============================================================<br/>"
+        f"Filter Endpoints</br>"
+        f"===============================================================<br/>"
+        f"/api/v1.0/location_filter/provinces<br/>"
+        f"/api/v1.0/location_filter/centers/&lt;province&gt;<br/>"
+        f"/api/v1.0/location_filter/zones/&lt;province&gt;/&lt;center&gt;<br/>"
+        f"/api/v1.0/location_filter/neighbourhoods/&lt;province&gt;/&lt;center&gt;/&lt;zone&gt;<br/>"
+        f"/api/v1.0/location_filter/years<br/>"
+        f"/api/v1.0/location_filter/dwellingtypes<br/>"
+        f"===============================================================<br/>"
+        f"Endpoint to get rental information for unqiue province + center combinations<br/>"
+        f"===============================================================<br/>"
+        f"/api/v1.0/province_centers<br/>"
+        f"===============================================================<br/>"
+        f"Endpoint to get rental information based on selected parameters<br/>"
+        f"<br/>"
         f"*NOTE: For following routes pass 'na' for cases where you wan to skip<br/>"
         f"any filter that comes before the one you want to filter for<br/></br>"
-        f"Example: if you want to just filter on year<br/>"
-        f"/api/v1.0/rental_data/na/na/na/na/2018<br/>"
+        f"Example: if you want to filter on year, use /api/v1.0/rental_data/na/na/na/na/2018<br/>"
         f"===============================================================<br/>"
-        f"/api/v1.0/rental_data/province<br/>"
-        f"/api/v1.0/rental_data/province/center<br/>"
-        f"/api/v1.0/rental_data/province/center/zone<br/>"
-        f"/api/v1.0/rental_data/province/center/zone/neighbourhood/year<br/>"
-        f"/api/v1.0/rental_data/province/center/zone/neighbourhood/year/dwellingtype"
+        f"/api/v1.0/rental_data/&lt;province&gt;<br/>"
+        f"/api/v1.0/rental_data/&lt;province&gt;/&lt;center&gt;<br/>"
+        f"/api/v1.0/rental_data/&lt;province&gt;/&lt;center&gt;/&lt;zone&gt;<br/>"
+        f"/api/v1.0/rental_data/&lt;province&gt;/&lt;center&gt;/&lt;zone&gt;/&lt;neighbourhood&gt;/&lt;year&gt;<br/>"
+        f"/api/v1.0/rental_data/&lt;province&gt;/&lt;center&gt;/&lt;zone&gt;/&lt;neighbourhood&gt;/&lt;year&gt;/&lt;dwellingtype&gt;"
     )
 
 @app.route("/api/v1.0/rental_data/<p>" , defaults={'c': None, 'z': None, 'n': None, 'y': None, 'dt': None })
@@ -63,7 +77,7 @@ def get_province_centers():
     df = pd.json_normalize(query)
 
     for index, row in df.iterrows():
-         rental_data.append(get_rental_data(row["_id.Province"], row["_id.Center"], 'na', 'na', 'na', 'na'))
+         rental_data.append(get_rental_data(row["_id.Province"], row["_id.Center"], 'na', 'na', 'na', 'na', True))
 
     return jsonify(rental_data)
 
@@ -140,7 +154,7 @@ def get_rental_data(p, c, z, n, y, dt, geo = False):
     filter_dict["Year"] = y
     filter_dict["DwellingType"] = dt
 
-    output["filter"] = filter_dict
+    output["Filter"] = filter_dict
 
     if(len(df.index) > 0):
 
@@ -148,7 +162,7 @@ def get_rental_data(p, c, z, n, y, dt, geo = False):
             geo_dict = {}
             geo_dict["Lat"] = df["Location.CenterGeo.lat"].iloc[0]
             geo_dict["Lon"] = df["Location.CenterGeo.lon"].iloc[0]
-            output["filter"]["Geo"] = geo_dict
+            output["Filter"]["CenterGeo"] = geo_dict
 
         #avearage rent
         ar_dict = {}
