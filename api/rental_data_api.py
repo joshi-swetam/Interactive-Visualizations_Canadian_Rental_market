@@ -3,11 +3,12 @@ import pandas as pd
 from pprint import pprint
 from pymongo import MongoClient
 from flask import Flask, jsonify
+from flask_cors import CORS, cross_origin
 
 #################################################
 # Database Setup
 #################################################
-mongo = MongoClient(port=27017)
+mongo = MongoClient("mongodb+srv://swetajoshi:Password234@project3.yny9jap.mongodb.net/") # port=27017 for local
 
 db = mongo['rental_data']
 rental_information = db['canadian_rental_market']
@@ -16,6 +17,8 @@ rental_information = db['canadian_rental_market']
 # Flask Setup
 #################################################
 app = Flask(__name__)
+CORS(app, support_credentials=True)
+
 
 #################################################
 # Flask Routes
@@ -45,6 +48,7 @@ def index():
         f"any filter that comes before the one you want to filter for<br/></br>"
         f"Example: if you want to filter on year, use /api/v1.0/rental_data/na/na/na/na/2018<br/>"
         f"===============================================================<br/>"
+        f"/api/v1.0/rental_data<br/>"
         f"/api/v1.0/rental_data/&lt;province&gt;<br/>"
         f"/api/v1.0/rental_data/&lt;province&gt;/&lt;center&gt;<br/>"
         f"/api/v1.0/rental_data/&lt;province&gt;/&lt;center&gt;/&lt;zone&gt;<br/>"
@@ -52,6 +56,7 @@ def index():
         f"/api/v1.0/rental_data/&lt;province&gt;/&lt;center&gt;/&lt;zone&gt;/&lt;neighbourhood&gt;/&lt;year&gt;/&lt;dwellingtype&gt;"
     )
 
+@app.route("/api/v1.0/rental_data" , defaults={'p': None, 'c': None, 'z': None, 'n': None, 'y': None, 'dt': None })
 @app.route("/api/v1.0/rental_data/<p>" , defaults={'c': None, 'z': None, 'n': None, 'y': None, 'dt': None })
 @app.route("/api/v1.0/rental_data/<p>/<c>" , defaults={'z': None, 'n': None, 'y': None, 'dt': None })
 @app.route("/api/v1.0/rental_data/<p>/<c>/<z>" , defaults={'n': None, 'y': None, 'dt': None })
@@ -137,6 +142,20 @@ def get_query(p, c, z, n, y, dt):
 
     return query
 
+def get_average(df, field):
+     vals = list(df.loc[df[field] != 0, field])
+     if(len(vals) > 0):
+          return sum(vals) / len(vals)
+     else:
+          return 0
+
+def get_sum(df, field):
+     vals = list(df.loc[df[field] != 0, field])
+     if(len(vals) > 0):
+          return sum(vals)
+     else:
+          return 0
+
 def get_rental_data(p, c, z, n, y, dt, geo = False):
      # Create query based on parameter
     query = get_query(p, c, z, n, y, dt)
@@ -154,7 +173,7 @@ def get_rental_data(p, c, z, n, y, dt, geo = False):
     filter_dict["Year"] = y
     filter_dict["DwellingType"] = dt
 
-    output["Filter"] = filter_dict
+    output["Filters"] = filter_dict
 
     if(len(df.index) > 0):
 
@@ -162,31 +181,31 @@ def get_rental_data(p, c, z, n, y, dt, geo = False):
             geo_dict = {}
             geo_dict["Lat"] = df["Location.CenterGeo.lat"].iloc[0]
             geo_dict["Lon"] = df["Location.CenterGeo.lon"].iloc[0]
-            output["Filter"]["CenterGeo"] = geo_dict
+            output["Filters"]["CenterGeo"] = geo_dict
 
         #avearage rent
         ar_dict = {}
-        ar_dict["Bachelor"] = df.loc[df["RentalInformation.AverageRent.Bachelor"] != 0, "RentalInformation.AverageRent.Bachelor"].mean()
-        ar_dict["1br"] = df.loc[df["RentalInformation.AverageRent.1br"] != 0, "RentalInformation.AverageRent.1br"].mean()
-        ar_dict["2br"] = df.loc[df["RentalInformation.AverageRent.2br"] != 0, "RentalInformation.AverageRent.2br"].mean()
-        ar_dict["3br+"] = df.loc[df["RentalInformation.AverageRent.3br+"] != 0, "RentalInformation.AverageRent.3br+"].mean()
-        ar_dict["Total"] = df.loc[df["RentalInformation.AverageRent.Total"] != 0, "RentalInformation.AverageRent.Total"].mean()
+        ar_dict["Bachelor"] = get_average(df, "RentalInformation.AverageRent.Bachelor")
+        ar_dict["1br"] = get_average(df, "RentalInformation.AverageRent.1br")
+        ar_dict["2br"] = get_average(df, "RentalInformation.AverageRent.2br")
+        ar_dict["3br+"] = get_average(df, "RentalInformation.AverageRent.3br+")
+        ar_dict["Total"] = get_average(df, "RentalInformation.AverageRent.Total")
 
         #vacancy rate
         vr_dict = {}
-        vr_dict["Bachelor"] = df.loc[df["RentalInformation.VacancyRate.Bachelor"] != 0, "RentalInformation.VacancyRate.Bachelor"].mean()
-        vr_dict["1br"] = df.loc[df["RentalInformation.VacancyRate.1br"] != 0, "RentalInformation.VacancyRate.1br"].mean()
-        vr_dict["2br"] = df.loc[df["RentalInformation.VacancyRate.2br"] != 0, "RentalInformation.VacancyRate.2br"].mean()
-        vr_dict["3br+"] = df.loc[df["RentalInformation.VacancyRate.3br+"] != 0, "RentalInformation.VacancyRate.3br+"].mean()
-        vr_dict["Total"] = df.loc[df["RentalInformation.VacancyRate.Total"] != 0, "RentalInformation.VacancyRate.Total"].mean()
+        vr_dict["Bachelor"] = get_average(df, "RentalInformation.VacancyRate.Bachelor")
+        vr_dict["1br"] = get_average(df, "RentalInformation.VacancyRate.1br")
+        vr_dict["2br"] = get_average(df, "RentalInformation.VacancyRate.2br")
+        vr_dict["3br+"] = get_average(df, "RentalInformation.VacancyRate.3br+")
+        vr_dict["Total"] = get_average(df, "RentalInformation.VacancyRate.Total")
 
         #total number of units
         nu_dict = {}
-        nu_dict["Bachelor"] = df.loc[df["RentalInformation.NumberofUnits.Bachelor"] != 0, "RentalInformation.NumberofUnits.Bachelor"].sum()
-        nu_dict["1br"] = df.loc[df["RentalInformation.NumberofUnits.1br"] != 0, "RentalInformation.NumberofUnits.1br"].sum()
-        nu_dict["2br"] = df.loc[df["RentalInformation.NumberofUnits.2br"] != 0, "RentalInformation.NumberofUnits.2br"].sum()
-        nu_dict["3br+"] = df.loc[df["RentalInformation.NumberofUnits.3br+"] != 0, "RentalInformation.NumberofUnits.3br+"].sum()
-        nu_dict["Total"] = df.loc[df["RentalInformation.NumberofUnits.Total"] != 0, "RentalInformation.NumberofUnits.Total"].sum()
+        nu_dict["Bachelor"] = get_sum(df, "RentalInformation.NumberofUnits.Bachelor")
+        nu_dict["1br"] = get_sum(df, "RentalInformation.NumberofUnits.1br")
+        nu_dict["2br"] = get_sum(df, "RentalInformation.NumberofUnits.2br")
+        nu_dict["3br+"] = get_sum(df, "RentalInformation.NumberofUnits.3br+")
+        nu_dict["Total"] = get_sum(df, "RentalInformation.NumberofUnits.Total")
 
         output["AverageRents"] = ar_dict
         output["AvearageVacancytRate"] = vr_dict
