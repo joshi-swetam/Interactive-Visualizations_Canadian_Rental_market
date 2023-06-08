@@ -1293,13 +1293,12 @@ let locations = [
 // Define arrays to hold the markers.
 let RentMarkers = [] ;
 let VRMarkers = [] ;
-// let BindMarkers=[]
 // let UnitsMarkers = [];
 
 // Loop through locations, and create the markers.
 for (let i = 0; i < locations.length; i++) {
   let cordinates = [locations[i].Filter.CenterGeo.Lat,locations[i].Filter.CenterGeo.Lon];
-
+  
 
   RentMarkers.push(
     L.circle(cordinates, {
@@ -1335,6 +1334,7 @@ for (let i = 0; i < locations.length; i++) {
 };
 console.log(RentMarkers)
 console.log(VRMarkers)
+
 // console.log(UnitsMarkers)
 // console.log(BindMarkers)
 
@@ -1350,6 +1350,7 @@ let topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 // Create  separate layer groups
 let rents = L.layerGroup(RentMarkers);
 let vacancyrate = L.layerGroup(VRMarkers);
+
 // let units = L.layerGroup(UnitsMarkers);
 
 // Create a baseMaps object.
@@ -1362,7 +1363,6 @@ let baseMaps = {
 let overlayMaps = {
   "Rents": rents,
   "Vacancy rate": vacancyrate,
- 
 };
 
 // Define a map object.
