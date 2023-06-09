@@ -23,8 +23,8 @@ function markerColor(d) {
     d > 5 ? "#f0f00a" :
     d > 4 ? "#15f00a" :
     d > 3 ? '#f00e12' :
-    d > 2 ? "#f5020b" :
-    d > 1 ? "#eb6b09" :
+    d > 2 ? "#eb6b09" :
+    d > 1 ?  "#f5020b":
     "#ba1c1c";
   }
 
@@ -1293,13 +1293,12 @@ let locations = [
 // Define arrays to hold the markers.
 let RentMarkers = [] ;
 let VRMarkers = [] ;
-// let UnitsMarkers = [];
+// let UnitsMarkers = []
 
 // Loop through locations, and create the markers.
 for (let i = 0; i < locations.length; i++) {
   let cordinates = [locations[i].Filter.CenterGeo.Lat,locations[i].Filter.CenterGeo.Lon];
   
-
   RentMarkers.push(
     L.circle(cordinates, {
       radius: markerSizerent(locations[i].AverageRents.Total),
@@ -1308,7 +1307,7 @@ for (let i = 0; i < locations.length; i++) {
       color: "black",
       stroke: true,
       weight: 0.7
-    }).bindPopup("<h3>"+ locations[i].Filter.Center +"<h3><h3>Average Rent:$ "+ locations[i].AverageRents.Total + "<h3><h3>Vacancy Rate: "+ locations[i].AvearageVacancytRate.Total + "</h3>")
+    }).bindPopup("<h3>"+ locations[i].Filter.Center +"<h3><h3>Average Rent:$ "+ locations[i].AverageRents.Total.toFixed(2) + "<h3><h3>Vacancy Rate: "+ locations[i].AvearageVacancytRate.Total.toFixed(2) + "</h3>")
   );
 
   VRMarkers.push(
@@ -1319,7 +1318,7 @@ for (let i = 0; i < locations.length; i++) {
       color: "black",
       stroke: true,
       weight: 0.7
-    }).bindPopup("<h3>"+ locations[i].Filter.Center +"<h3><h3>Average Rent:$ "+ locations[i].AverageRents.Total + "<h3><h3>Vacancy Rate: "+ locations[i].AvearageVacancytRate.Total + "</h3>")
+    }).bindPopup("<h3>"+ locations[i].Filter.Center +"<h3><h3>Average Rent:$ "+ locations[i].AverageRents.Total.toFixed(2) + "<h3><h3>Vacancy Rate: "+ locations[i].AvearageVacancytRate.Total.toFixed(2) + "</h3>")
   );
 //   UnitsMarkers.push(
 //     L.circle(cordinates, {
@@ -1334,9 +1333,7 @@ for (let i = 0; i < locations.length; i++) {
 };
 console.log(RentMarkers)
 console.log(VRMarkers)
-
 // console.log(UnitsMarkers)
-// console.log(BindMarkers)
 
 // Create the base layers.
 let street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1363,7 +1360,10 @@ let baseMaps = {
 let overlayMaps = {
   "Rents": rents,
   "Vacancy rate": vacancyrate,
+
 };
+
+
 
 // Define a map object.
 let myMap = L.map("map", {
