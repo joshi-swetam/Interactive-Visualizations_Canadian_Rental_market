@@ -4,20 +4,17 @@
     <title>Data Visualization</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="static/js/script.js"></script>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
 <body>
-    <div>
-        <label for="yearSelect">Select Year:</label>
+    <div id="container">
         <select id="yearSelect"></select>
-    </div>
-    <div>
-        <label for="provinceSelect">Select Province:</label>
         <select id="provinceSelect"></select>
+        <select id="neighborhoodSelect"></select>
+        <div id="bar"></div>
+        <div id="pie"></div>
     </div>
-    <div id="bar"></div>
-    <div id="pie"></div>
+    <script src="static/js/script.js"></script>
 </body>
 </html>
 
