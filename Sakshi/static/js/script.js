@@ -7,7 +7,7 @@ let selectedProvince;
 let selectedNeighbourhood;
 let chartArea = document.getElementById('charts');
 
-d3.json('rental_data.json').then(d => {
+d3.json('http://localhost:5000/data').then(d => {
     data = d;
     initializeSelections();
 });
