@@ -1,68 +1,86 @@
-let yearSelect = document.getElementById('yearSelect');
-let provinceSelect = document.getElementById('provinceSelect');
-let neighborhoodSelect = document.getElementById('neighborhoodSelect');
-
 d3.json("/data").then(function(data) {
-    let years = [...new Set(data.map(d => d.Year))]; 
+
+    let dropdownYear = d3.select("#dropdownYear");
+    let dropdownProvince = d3.select("#dropdownProvince");
+    let dropdownNeighbourhood = d3.select("#dropdownNeighbourhood");
+
+    let years = [...new Set(data.map(d => d.Year))];
     let provinces = [...new Set(data.map(d => d.Location.Province))];
-    let neighborhoods = [...new Set(data.map(d => d.Location.Neighborhood))];
+    let neighbourhoods = [...new Set(data.map(d => d.Location.Neighbourhood))];
 
-    years.forEach(year => populateSelectBox(yearSelect, year));
-    provinces.forEach(province => populateSelectBox(provinceSelect, province));
-    neighborhoods.forEach(neighborhood => populateSelectBox(neighborhoodSelect, neighborhood));
+    years.forEach(year => dropdownYear.append("option").text(year));
+    provinces.forEach(province => dropdownProvince.append("option").text(province));
+    neighbourhoods.forEach(neighbourhood => dropdownNeighbourhood.append("option").text(neighbourhood));
 
-    // Initial draw
-    drawCharts(data, yearSelect.value, provinceSelect.value, neighborhoodSelect.value);
+    function updateCharts() {
+        let selectedYear = dropdownYear.property("value");
+        let selectedProvince = dropdownProvince.property("value");
+        let selectedNeighbourhood = dropdownNeighbourhood.property("value");
 
-    // Redraw charts when selected year, province, or neighborhood changes
-    yearSelect.addEventListener('change', function() {
-        drawCharts(data, this.value, provinceSelect.value, neighborhoodSelect.value);
-    });
+        let filteredData = data.filter(d => d.Year == selectedYear && d.Location.Province == selectedProvince && d.Location.Neighbourhood == selectedNeighbourhood);
 
-    provinceSelect.addEventListener('change', function() {
-        drawCharts(data, yearSelect.value, this.value, neighborhoodSelect.value);
-    });
+        let averageRents = filteredData.map(d => d.RentalInformation.AverageRent.Total);
+        let vacancyRates = filteredData.map(d => d.RentalInformation.VacancyRate.Total);
+        let labels = filteredData.map(d => d.Location.Center);
 
-    neighborhoodSelect.addEventListener('change', function() {
-        drawCharts(data, yearSelect.value, provinceSelect.value, this.value);
-    });
+        var trace1 = {
+            x: labels,
+            y: averageRents,
+            type: 'bar',
+            name: 'Average Rent',
+            marker: {
+                color: 'rgb(55, 83, 109)'
+            }
+        };
+
+        var trace2 = {
+            x: labels,
+            y: vacancyRates,
+            type: 'bar',
+            name: 'Vacancy Rate',
+            marker: {
+                color: 'rgb(26, 118, 255)'
+            }
+        };
+
+        var layout = {
+            title: 'Average Rent and Vacancy Rate by City',
+            barmode: 'group'
+        };
+
+        Plotly.newPlot('bar', [trace1, trace2], layout);
+
+        var trace3 = {
+            values: averageRents,
+            labels: labels,
+            type: 'pie',
+            name: 'Average Rent',
+            marker: {
+                colors: ['rgb(67,67,67)', 'rgb(115,115,115)', 'rgb(49,130,189)', 'rgb(189,189,189)']
+            }
+        };
+
+        var trace4 = {
+            values: vacancyRates,
+            labels: labels,
+            type: 'pie',
+            name: 'Vacancy Rate',
+            marker: {
+                colors: ['rgb(67,67,67)', 'rgb(115,115,115)', 'rgb(49,130,189)', 'rgb(189,189,189)']
+            }
+        };
+
+        var layoutPie = {
+            title: 'Average Rent and Vacancy Rate by City',
+        };
+
+        Plotly.newPlot('pie1', [trace3], layoutPie);
+        Plotly.newPlot('pie2', [trace4], layoutPie);
+    }
+
+    dropdownYear.on("change", updateCharts);
+    dropdownProvince.on("change", updateCharts);
+    dropdownNeighbourhood.on("change", updateCharts);
+
+    updateCharts();
 });
-
-function populateSelectBox(selectBox, value) {
-    let option = document.createElement('option');
-    option.value = value;
-    option.text = value;
-    selectBox.appendChild(option);
-}
-
-function drawCharts(data, year, province, neighborhood) {
-    let filteredData = data.filter(d => d.Year == year && d.Location.Province == province && d.Location.Neighborhood == neighborhood);
-    let values = filteredData.map(d => d.RentalInformation.AverageRent.Total);  
-    let labels = filteredData.map(d => d.Location.Neighborhood);   
-
-    // Bar Plot
-    var trace1 = {
-        x: labels,
-        y: values,
-        type: 'bar'
-    };
-
-    var layout1 = {
-        title: 'Average Rent by Neighborhood (' + year + ', ' + province + ', ' + neighborhood + ')',
-    };
-
-    Plotly.newPlot('bar', [trace1], layout1);
-
-    // Pie Chart
-    var trace2 = {
-        values: values,
-        labels: labels,
-        type: 'pie'
-    };
-
-    var layout2 = {
-        title: 'Average Rent by Neighborhood (' + year + ', ' + province + ', ' + neighborhood + ')',
-    };
-
-    Plotly.newPlot('pie', [trace2], layout2);
-}
