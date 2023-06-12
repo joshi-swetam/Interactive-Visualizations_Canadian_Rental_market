@@ -1,7 +1,11 @@
-from flask import Flask, jsonify
+from flask import Flask, render_template, jsonify
 from pymongo import MongoClient
 
 app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/data', methods=['GET'])
 def get_data():
