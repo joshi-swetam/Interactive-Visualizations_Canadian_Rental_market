@@ -43,6 +43,7 @@ function sample_plot(province){
             rent_array.push(province_array[i].AverageRent);
             centres_array.push(province_array[i].Centres);
             units_array.push(province_array[i].Units);
+            vacancy_array.push(province_array[i].VacancyRate)
           }
           console.log(rent_array,centres_array,units_array);
         // build a bar chart 
@@ -78,6 +79,7 @@ function sample_plot(province){
 
       }
       Plotly.newPlot("pie",pie_data,pie_layout);
+
   });
 };
 

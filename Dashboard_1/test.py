@@ -48,16 +48,7 @@ fields = {"Location.Province": 1, "Location.Center" :1, "Location.CenterGeo" : 1
 
 # Cast the results as a list and save the results to a variable
 results = list(rental_information.find(query, fields))
-print(len(results))
-NF_df = pd.json_normalize(results)
-NF_df = NF_df[['Year', 'Location.Province', 'Location.Center',
-       'Location.CenterGeo.lat', 'Location.CenterGeo.lon',
-       'RentalInformation.AverageRent.Total',
-       'RentalInformation.VacancyRate.Total','RentalInformation.NumberofUnits.Total']]
-NF_df= NF_df.rename(columns = {'Location.Province': 'Province', 'Location.Center': 'Center',
-       'Location.CenterGeo.lat' : 'Lat', 'Location.CenterGeo.lon': 'Lon',
-       'RentalInformation.AverageRent.Total' :'Average Rent','RentalInformation.VacancyRate.Total' : 'Vacancy Rate','RentalInformation.NumberofUnits.Total' : 'Units' })
-NF_df.head()
+
 def province(result):
     df = pd.json_normalize(result)
     df = df[['Year', 'Location.Province', 'Location.Center',
@@ -111,7 +102,7 @@ def Centres_list(df, Province):
         dict_df["Lat"] = row['Lat']
         dict_df["Lon"] = row['Lon']
         dict_df["AverageRent"] = row["Average Rent"]
-        dict_df["Vacancy Rate"] = row["Vacancy Rate"]
+        dict_df["VacancyRate"] = row["Vacancy Rate"]
         dict_df["Units"] = row['Units']
         output.append(dict_df)
         
@@ -126,5 +117,5 @@ Sask= Centres_list(df_sask, "Saskatchewan")
 list_2022 = [["Ontario", "Quebec", "British Columbia", "Alberta","Nova Scotia","Saskatchewan"],[Ontario,Quebec, BC ,Alberta ,NS ,Sask]]
 
 import json
-with open("data_2022_2.json", "w") as outfile:
+with open("data_2022.json", "w") as outfile:
     json.dump(list_2022, outfile)
