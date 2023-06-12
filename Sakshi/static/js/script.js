@@ -1,86 +1,80 @@
-d3.json("/data").then(function(data) {
+let data;
+let yearSelect = document.getElementById('yearSelect');
+let provinceSelect = document.getElementById('provinceSelect');
+let neighbourhoodSelect = document.getElementById('neighbourhoodSelect');
+let selectedYear;
+let selectedProvince;
+let selectedNeighbourhood;
+let chartArea = document.getElementById('charts');
 
-    let dropdownYear = d3.select("#dropdownYear");
-    let dropdownProvince = d3.select("#dropdownProvince");
-    let dropdownNeighbourhood = d3.select("#dropdownNeighbourhood");
-
-    let years = [...new Set(data.map(d => d.Year))];
-    let provinces = [...new Set(data.map(d => d.Location.Province))];
-    let neighbourhoods = [...new Set(data.map(d => d.Location.Neighbourhood))];
-
-    years.forEach(year => dropdownYear.append("option").text(year));
-    provinces.forEach(province => dropdownProvince.append("option").text(province));
-    neighbourhoods.forEach(neighbourhood => dropdownNeighbourhood.append("option").text(neighbourhood));
-
-    function updateCharts() {
-        let selectedYear = dropdownYear.property("value");
-        let selectedProvince = dropdownProvince.property("value");
-        let selectedNeighbourhood = dropdownNeighbourhood.property("value");
-
-        let filteredData = data.filter(d => d.Year == selectedYear && d.Location.Province == selectedProvince && d.Location.Neighbourhood == selectedNeighbourhood);
-
-        let averageRents = filteredData.map(d => d.RentalInformation.AverageRent.Total);
-        let vacancyRates = filteredData.map(d => d.RentalInformation.VacancyRate.Total);
-        let labels = filteredData.map(d => d.Location.Center);
-
-        var trace1 = {
-            x: labels,
-            y: averageRents,
-            type: 'bar',
-            name: 'Average Rent',
-            marker: {
-                color: 'rgb(55, 83, 109)'
-            }
-        };
-
-        var trace2 = {
-            x: labels,
-            y: vacancyRates,
-            type: 'bar',
-            name: 'Vacancy Rate',
-            marker: {
-                color: 'rgb(26, 118, 255)'
-            }
-        };
-
-        var layout = {
-            title: 'Average Rent and Vacancy Rate by City',
-            barmode: 'group'
-        };
-
-        Plotly.newPlot('bar', [trace1, trace2], layout);
-
-        var trace3 = {
-            values: averageRents,
-            labels: labels,
-            type: 'pie',
-            name: 'Average Rent',
-            marker: {
-                colors: ['rgb(67,67,67)', 'rgb(115,115,115)', 'rgb(49,130,189)', 'rgb(189,189,189)']
-            }
-        };
-
-        var trace4 = {
-            values: vacancyRates,
-            labels: labels,
-            type: 'pie',
-            name: 'Vacancy Rate',
-            marker: {
-                colors: ['rgb(67,67,67)', 'rgb(115,115,115)', 'rgb(49,130,189)', 'rgb(189,189,189)']
-            }
-        };
-
-        var layoutPie = {
-            title: 'Average Rent and Vacancy Rate by City',
-        };
-
-        Plotly.newPlot('pie1', [trace3], layoutPie);
-        Plotly.newPlot('pie2', [trace4], layoutPie);
-    }
-
-    dropdownYear.on("change", updateCharts);
-    dropdownProvince.on("change", updateCharts);
-    dropdownNeighbourhood.on("change", updateCharts);
-
-    updateCharts();
+d3.json('rental_data.json').then(d => {
+    data = d;
+    initializeSelections();
 });
+
+function initializeSelections() {
+    let years = [...new Set(data.map(d => d.Year))].sort();
+    let provinces = [...new Set(data.map(d => d.Location.Province))].sort();
+    let neighbourhoods = [...new Set(data.map(d => d.Location.Neighbourhood))].sort();
+
+    appendOptions(yearSelect, years);
+    appendOptions(provinceSelect, provinces);
+    appendOptions(neighbourhoodSelect, neighbourhoods);
+
+    updateYear();
+    updateProvince();
+    updateNeighbourhood();
+}
+
+function appendOptions(selectElement, optionsArray) {
+    optionsArray.forEach(option => {
+        let opt = document.createElement('option');
+        opt.value = option;
+        opt.innerHTML = option;
+        selectElement.appendChild(opt);
+    });
+}
+
+function updateYear() {
+    selectedYear = yearSelect.value;
+    updateCharts();
+}
+
+function updateProvince() {
+    selectedProvince = provinceSelect.value;
+    updateCharts();
+}
+
+function updateNeighbourhood() {
+    selectedNeighbourhood = neighbourhoodSelect.value;
+    updateCharts();
+}
+
+function updateCharts() {
+    chartArea.innerHTML = ''; // Clear old charts
+
+    let filteredData = data.filter(d =>
+        d.Year == selectedYear &&
+        d.Location.Province == selectedProvince &&
+        d.Location.Neighbourhood == selectedNeighbourhood
+    );
+
+    // assuming we want to visualize 'AverageRent', 'VacancyRate', and 'NumberofUnits'
+    ['AverageRent', 'VacancyRate', 'NumberofUnits'].forEach(key => {
+        let values = filteredData.map(d => d.RentalInformation[key]);
+
+        // create a bar chart for each key
+        createBarChart(key, values);
+    });
+}
+
+function createBarChart(key, values) {
+    // Implement your d3.js bar chart logic here. 
+    // `key` will be the name of the bar chart. 
+    // `values` will be the data array to visualize. 
+
+    // This is a simplified placeholder implementation:
+    let div = document.createElement('div');
+    div.innerHTML = `<h2>${key}</h2>${JSON.stringify(values)}`;
+    chartArea.appendChild(div);
+}

@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Data Visualization</title>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
-</head>
-<body>
-    <div id="container">
-        <select id="yearSelect"></select>
-        <select id="provinceSelect"></select>
-        <select id="neighborhoodSelect"></select>
-        <div id="bar"></div>
-        <div id="pie"></div>
-    </div>
-    <script src="static/js/script.js"></script>
-</body>
+    <head>
+        <title>Rental Market Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <div>
+            <select id="yearSelect" onchange="updateYear()"></select>
+            <select id="provinceSelect" onchange="updateProvince()"></select>
+            <select id="neighbourhoodSelect" onchange="updateNeighbourhood()"></select>
+        </div>
+        <div id="charts"></div>
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
-
 
