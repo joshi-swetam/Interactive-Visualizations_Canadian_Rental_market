@@ -37,7 +37,7 @@
             <a href="#units" aria-controls="units" role="tab" data-toggle="tab">Number of Units</a>
           </li>
           <li role="presentation">
-            <a href="#three" aria-controls="leaflet" role="tab" data-toggle="tab">Leaflet (Rent-Province-Center)</a>
+            <a href="#leaflet" aria-controls="leaflet" role="tab" data-toggle="tab">Leaflet (Rent-Province-Center)</a>
           </li>
         </ul>
       </div>
@@ -66,10 +66,17 @@
           </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="units">
-          two
+          <div class="row">
+            <div class="col-md-4">
+              Year:<br/>
+              <select id="selYear" class="custom-select" onchange="renderNumberOfUnitsChart(this.value)"></select></br></br>
+            </div>
+            <div class="col-md-8" style="height:400;">
+              <div><canvas id="nu_doughnut_total_chart" style="width:100%"></canvas></div>
+            </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="leaflet">
-          three
+          Leaflet
         </div>
       </div>
     </div>

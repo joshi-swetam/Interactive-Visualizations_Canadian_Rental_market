@@ -1,19 +1,11 @@
 const baseUrl = 'http://127.0.0.1:5000/api/v1.0';
 
-
-// d3.json(`${baseUrl}/province_centers`)
-//     .then(
-//         function(rental_data)
-//         { 
-//             console.log("Rental Data for Province + Centers with Geo Location");
-//             console.log("=====================================================");
-//             console.log(rental_data);
-//         });
-
 let province_trend_by_year;
 let provinces;
+let years;
 let ar_trend_chart;
 let vr_trend_chart;
+let nu_doughnut_total_chart;
 
 d3.json(`${baseUrl}/province_trend_by_year`)
 .then(
@@ -21,10 +13,20 @@ d3.json(`${baseUrl}/province_trend_by_year`)
     { 
         province_trend_by_year = data;
 
-        provinces = province_trend_by_year.map((item) => item.Province);;
+        provinces = province_trend_by_year.map((item) => item.Province);
+        years = province_trend_by_year[0].NumberOfUnits.map((item) => item.Year);
+
+        years.forEach((year) => {
+            d3.select("#selYear")
+                .append("option")
+                .text(year)
+                .property("value", year);
+        });
 
         renderTrendChartAverageRent();
         renderTrendChartVacancyRate();
+        
+        d3.select("#selYear").dispatch("change");
     });
 
 function updateProvinceSelection(button, province) {
@@ -162,7 +164,7 @@ function renderTrendChartVacancyRate() {
             },
             title: {
                 display: true,
-                text: 'VacancyRate Rate - YoY - By Province'
+                text: 'Average Vacancy Rate - YoY - By Province'
             }
             }
         },
@@ -172,4 +174,53 @@ function renderTrendChartVacancyRate() {
         vr_trend_chart.destroy();
 
     vr_trend_chart = new Chart("vr_trend_chart", config);
+}
+
+function renderNumberOfUnitsChart(year) {
+    let num_units_dataset = province_trend_by_year.map((item) => {
+        var year_units = item.NumberOfUnits.filter(
+            function(y)
+            { 
+                return y.Year == parseInt(year);
+            })[0];
+        
+        data_dict = {};
+        data_dict["Province"] = item.Province;
+        data_dict["NumberOfUnits"] = year_units.NumberOfUnits;
+
+        return data_dict;
+    });
+
+    num_units_dataset = num_units_dataset.sort(function(a, b){return a.Province - b.Province});
+
+    console.log(num_units_dataset);
+
+    const data = {
+        labels: num_units_dataset.map((el) => el.Province),
+        datasets: [{
+            data: num_units_dataset.map((el) => el.NumberOfUnits)
+        }]
+    };
+
+    const config = {
+        type: 'doughnut',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Number of Units by Province'
+            }
+            }
+        },
+    };
+    
+    if(nu_doughnut_total_chart != undefined)
+        nu_doughnut_total_chart.destroy();
+
+    nu_doughnut_total_chart = new Chart("nu_doughnut_total_chart", config);
 }
