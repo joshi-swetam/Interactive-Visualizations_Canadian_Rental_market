@@ -1,8 +1,7 @@
 d3.json("/data").then(function(data) {
     // Extract data for plotting
-    
-    let values = data.map(d => d.AverageRent);  
-    let labels = data.map(d => d.Province);   
+    let values = data.map(d => d.RentalInformation.AverageRent);
+    let labels = data.map(d => d.Location.Province);
 
     // Create a bar plot
     var trace1 = {
@@ -12,7 +11,7 @@ d3.json("/data").then(function(data) {
     };
 
     var layout1 = {
-        title: 'Bar Plot',
+        title: 'Average Rent by Province',
     };
 
     Plotly.newPlot('bar', [trace1], layout1);
@@ -25,8 +24,9 @@ d3.json("/data").then(function(data) {
     };
 
     var layout2 = {
-        title: 'Pie Chart',
+        title: 'Average Rent by Province',
     };
 
     Plotly.newPlot('pie', [trace2], layout2);
 });
+

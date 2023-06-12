@@ -10,12 +10,13 @@ def index():
 @app.route('/data', methods=['GET'])
 def get_data():
     client = MongoClient("mongodb+srv://SakshiDalal:Password546@project3.yny9jap.mongodb.net/")
-    db = client['rental_data']   # database name
-    collection = db['canadian_rental_market']  # collection name
+    db = client['rental_data']
+    collection = db['canadian_rental_market']
     data = list(collection.find({}))
     for item in data:
-        item["_id"] = str(item["_id"])  # Convert ObjectIDs to strings
+        item["_id"] = str(item["_id"])
     return jsonify(data), 200
 
 if __name__ == "__main__":
     app.run(debug=True)
+
