@@ -19,42 +19,66 @@
 <body>
 
   <div class="container">
+    
     <div class="row">
+      
       <div class="jumbotron text-center" style="margin-bottom: 0px;">
         <h1>Canadian Rental Market</h1>
         <p>Use interactive charts below to explore the dataset</p>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
-        <div>
-            <h2>Filters</h2>
-        </div>
-        <div>
-            Province:<br/>
-            <select id="selProvince" class="custom-select" onchange="selProvinceChanged(this.value)"></select></br></br>
-            Center:<br/>
-            <select id="selCenter" class="custom-select" onchange="selCenterChanged(this.value)"></select></br></br>
-            Zone:<br/>
-            <select id="selZone" class="custom-select" onchange="selZoneChanged(this.value)"></select></br></br>
-            Neighbourhood:<br/>
-            <select id="selNeighbourhood" class="custom-select"></select></br></br>
-            Year:<br/>
-            <select id="selYear" class="custom-select"></select></br></br>
-            Dwelling Type:<br/>
-            <select id="selDwellingType" class="custom-select"></select></br></br>
-            <button type="button" class="btn btn-primary" onclick="getRentalInformation()" style="width:200px">Get Rental Information</button>
-        </div>
-      </div>
-      <div class="col-md-9" style="height:500px;background-color:cornsilk;">
-        <div id="bar"></div>
+      <div class="panel-heading panel-heading-nav">
+        <ul class="nav nav-tabs">
+          <li role="presentation" class="active">
+            <a href="#trend" aria-controls="trends" role="tab" data-toggle="tab">Trends 2018 - 2022</a>
+          </li>
+          <li role="presentation">
+            <a href="#units" aria-controls="units" role="tab" data-toggle="tab">Number of Units</a>
+          </li>
+          <li role="presentation">
+            <a href="#three" aria-controls="leaflet" role="tab" data-toggle="tab">Leaflet (Rent-Province-Center)</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12 bg-info"><div id='leaflet'><center><h1>Place holder for Leaflet</h1></center></div></div>
+    <div class="panel-body">
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="trend">
+          <div class="row">
+            <div class="col-md-12">
+              <center>
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'Alta')" style="width:200px">Alta</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'B.C.')" style="width:200px">B.C</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'Ont.')" style="width:200px">Ont.</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'Que')" style="width:200px">Que</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'Man.')" style="width:200px">Man.</button>
+              </center>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6" style="height:500px;">
+              <div><canvas id="ar_trend_chart" style="width:100%"></canvas></div>
+            </div>
+            <div class="col-md-6" style="height:500px;">
+              <div><canvas id="vr_trend_chart" style="width:100%"></canvas></div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="units">
+          two
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="leaflet">
+          three
+        </div>
+      </div>
     </div>
+    
   </div>
 
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- D3 JS -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <!-- Chart JS -->

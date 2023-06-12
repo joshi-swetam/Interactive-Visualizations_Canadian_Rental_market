@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dashboard - Canadian Rental Market</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    .custom-select {
+        position: relative;
+        font-family: Arial;
+        width:200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="jumbotron text-center" style="margin-bottom: 0px;">
+        <h1>Canadian Rental Market</h1>
+        <p>Use interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div>
+            <h2>Filters</h2>
+        </div>
+        <div>
+            Province:<br/>
+            <select id="selProvince" class="custom-select" onchange="selProvinceChanged(this.value)"></select></br></br>
+            Center:<br/>
+            <select id="selCenter" class="custom-select" onchange="selCenterChanged(this.value)"></select></br></br>
+            Zone:<br/>
+            <select id="selZone" class="custom-select" onchange="selZoneChanged(this.value)"></select></br></br>
+            Neighbourhood:<br/>
+            <select id="selNeighbourhood" class="custom-select"></select></br></br>
+            Year:<br/>
+            <select id="selYear" class="custom-select"></select></br></br>
+            Dwelling Type:<br/>
+            <select id="selDwellingType" class="custom-select"></select></br></br>
+            <button type="button" class="btn btn-primary" onclick="getRentalInformation()" style="width:200px">Get Rental Information</button>
+        </div>
+      </div>
+      <div class="col-md-9" style="height:500px;background-color:cornsilk;">
+        <div id="bar"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 bg-info"><div id='leaflet'><center><h1>Place holder for Leaflet</h1></center></div></div>
+    </div>
+  </div>
+
+  <!-- D3 JS -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <script src="./js/app.js"></script>
+  
+</body>
+
+</html>

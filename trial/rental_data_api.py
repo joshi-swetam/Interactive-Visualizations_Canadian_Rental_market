@@ -102,6 +102,7 @@ def get_province_trend_by_year():
                     { 
                         "_id": { "Province": "$Location.Province", "Year": "$Year" } 
                         , "AverageRent":{ "$avg": "$RentalInformation.AverageRent.Total" }
+                        , "VacancyRate":{ "$avg": "$RentalInformation.VacancyRate.Total" }
                     } 
                 }
                 , { "$sort":{"_id.Province":1, "_id.Year": 1} }
@@ -122,15 +123,22 @@ def get_province_trend_by_year():
         province_df = df[df['Province'] == province]
 
         average_rents = []
+        vacancy_rates = []
 
         for index, row in province_df.iterrows():
             ar_dict = {}
             ar_dict["Year"] = row["Year"]
             ar_dict["AverageRent"] = row["AverageRent"]
 
+            vr_dict = {}
+            vr_dict["Year"] = row["Year"]
+            ar_dict["VacancyRate"] = row["VacancyRate"]
+
             average_rents.append(ar_dict)
+            vacancy_rates.append(ar_dict)
 
         dict["AverageRents"] = average_rents
+        dict["VacanyRates"] = vacancy_rates
         output.append(dict)
 
     return jsonify(output)

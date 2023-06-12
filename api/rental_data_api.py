@@ -41,33 +41,8 @@ def index():
         f"Endpoint to get rental information for unqiue province + center combinations<br/>"
         f"===============================================================<br/>"
         f"/api/v1.0/province_centers<br/>"
-        f"===============================================================<br/>"
-        f"Endpoint to get rental information based on selected parameters<br/>"
-        f"<br/>"
-        f"*NOTE: For following routes pass 'na' for cases where you wan to skip<br/>"
-        f"any filter that comes before the one you want to filter for<br/></br>"
-        f"Example: if you want to filter on year, use /api/v1.0/rental_data/na/na/na/na/2018<br/>"
-        f"===============================================================<br/>"
-        f"/api/v1.0/rental_data<br/>"
-        f"/api/v1.0/rental_data/&lt;province&gt;<br/>"
-        f"/api/v1.0/rental_data/&lt;province&gt;/&lt;center&gt;<br/>"
-        f"/api/v1.0/rental_data/&lt;province&gt;/&lt;center&gt;/&lt;zone&gt;<br/>"
-        f"/api/v1.0/rental_data/&lt;province&gt;/&lt;center&gt;/&lt;zone&gt;/&lt;neighbourhood&gt;/&lt;year&gt;<br/>"
-        f"/api/v1.0/rental_data/&lt;province&gt;/&lt;center&gt;/&lt;zone&gt;/&lt;neighbourhood&gt;/&lt;year&gt;/&lt;dwellingtype&gt;"
+        f"/api/v1.0/province_trend_by_year<br/>"
     )
-
-@app.route("/api/v1.0/rental_data" , defaults={'p': None, 'c': None, 'z': None, 'n': None, 'y': None, 'dt': None })
-@app.route("/api/v1.0/rental_data/<p>" , defaults={'c': None, 'z': None, 'n': None, 'y': None, 'dt': None })
-@app.route("/api/v1.0/rental_data/<p>/<c>" , defaults={'z': None, 'n': None, 'y': None, 'dt': None })
-@app.route("/api/v1.0/rental_data/<p>/<c>/<z>" , defaults={'n': None, 'y': None, 'dt': None })
-@app.route("/api/v1.0/rental_data/<p>/<c>/<z>/<n>" , defaults={'y': None, 'dt': None })
-@app.route("/api/v1.0/rental_data/<p>/<c>/<z>/<n>/<y>" , defaults={'dt': None })
-@app.route("/api/v1.0/rental_data/<p>/<c>/<z>/<n>/<y>/<dt>")
-def get_rental_information(p, c, z, n, y, dt):
-
-    output = get_rental_data(p, c, z, n, y, dt)
-
-    return jsonify(output)
 
 @app.route("/api/v1.0/province_centers")
 def get_province_centers():
@@ -85,6 +60,89 @@ def get_province_centers():
          rental_data.append(get_rental_data(row["_id.Province"], row["_id.Center"], 'na', 'na', 'na', 'na', True))
 
     return jsonify(rental_data)
+
+@app.route("/api/v1.0/province_trend_by_year")
+def get_province_trend_by_year():
+    query = rental_information.aggregate( [
+                {
+                    "$project": 
+                    {
+                        "_id": 1 
+                        , "Location.Province": 1
+                        , "Year": 1
+                        , "RentalInformation.AverageRent.Total": 
+                            { "$cond": 
+                                { 
+                                    "if": { "$eq": ["$RentalInformation.AverageRent.Total", 0.0] }
+                                    , "then": "null"
+                                    , "else": "$RentalInformation.AverageRent.Total"  
+                                }
+                            }
+                        , "RentalInformation.VacancyRate.Total": 
+                            { "$cond": 
+                                { 
+                                    "if": { "$eq": ["$RentalInformation.VacancyRate.Total", 0.0] }
+                                    , "then": "null"
+                                    , "else": "$RentalInformation.VacancyRate.Total"  
+                                }
+                            }
+                        , "RentalInformation.NumberofUnits.Total": 1
+                    }
+                },
+                {
+                    "$group": 
+                    { 
+                        "_id": { "Province": "$Location.Province", "Year": "$Year" } 
+                        , "AverageRent":{ "$avg": "$RentalInformation.AverageRent.Total" }
+                        , "VacancyRate":{ "$avg": "$RentalInformation.VacancyRate.Total" }
+                        , "NumberOfUnits":{ "$sum": "$RentalInformation.NumberofUnits.Total" }
+                    } 
+                }
+                , { "$sort":{"_id.Province":1, "_id.Year": 1} },
+            ])
+
+    df = pd.json_normalize(query)
+    df = df.rename(columns={'_id.Province': 'Province', '_id.Year': 'Year'})
+    df = df[["Province","Year","AverageRent","VacancyRate","NumberOfUnits"]]
+
+    province_list = ["Alta", "B.C.", "Ont.", "Que", "Man."]
+
+    output = []
+
+    for province in province_list:
+        dict = {}
+        dict["Province"] = province
+
+        province_df = df[df['Province'] == province]
+
+        average_rents = []
+        vacancy_rates = []
+        number_of_units = []
+
+        for index, row in province_df.iterrows():
+            ar_dict = {}
+            ar_dict["Year"] = row["Year"]
+            ar_dict["AverageRent"] = row["AverageRent"]
+
+            vr_dict = {}
+            vr_dict["Year"] = row["Year"]
+            vr_dict["VacancyRate"] = row["VacancyRate"]
+
+            nu_dict = {}
+            nu_dict["Year"] = row["Year"]
+            nu_dict["NumberOfUnits"] = row["NumberOfUnits"]
+
+            average_rents.append(ar_dict)
+            vacancy_rates.append(vr_dict)
+            number_of_units.append(nu_dict)
+
+        dict["AverageRents"] = average_rents
+        dict["VacancyRates"] = vacancy_rates
+        dict["NumberOfUnits"] = number_of_units
+        
+        output.append(dict)
+
+    return jsonify(output)
 
 @app.route("/api/v1.0/location_filter/provinces")
 def get_province():
@@ -165,15 +223,11 @@ def get_rental_data(p, c, z, n, y, dt, geo = False):
     output = {}
 
     #location rent
-    filter_dict = {}
-    filter_dict["Province"] = p
-    filter_dict["Center"] = c
-    filter_dict["Zone"] = z
-    filter_dict["Neighbourhood"] = n
-    filter_dict["Year"] = y
-    filter_dict["DwellingType"] = dt
+    location_dict = {}
+    location_dict["Province"] = p
+    location_dict["Center"] = c
 
-    output["Filters"] = filter_dict
+    output["Location"] = location_dict
 
     if(len(df.index) > 0):
 
@@ -181,7 +235,7 @@ def get_rental_data(p, c, z, n, y, dt, geo = False):
             geo_dict = {}
             geo_dict["Lat"] = df["Location.CenterGeo.lat"].iloc[0]
             geo_dict["Lon"] = df["Location.CenterGeo.lon"].iloc[0]
-            output["Filters"]["CenterGeo"] = geo_dict
+            output["Location"]["Geo"] = geo_dict
 
         #avearage rent
         ar_dict = {}

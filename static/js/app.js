@@ -1,165 +1,175 @@
-const selProvince = d3.select("#selProvince");
-const selCenter = d3.select("#selCenter");
-const selZone = d3.select("#selZone");
-const selNeighbourhood = d3.select("#selNeighbourhood");
-const selYear = d3.select("#selYear");
-const selDwellingType = d3.select("#selDwellingType");
-
 const baseUrl = 'http://127.0.0.1:5000/api/v1.0';
 
-d3.json(`${baseUrl}/location_filter/provinces`)
-    .then(
-        function(provinces)
-        { 
-            selProvince.append("option").text("All").property("value", "na");
 
-            provinces.forEach((province) => {
-                selProvince
-                    .append("option")
-                    .text(province)
-                    .property("value", province);
-            });
+// d3.json(`${baseUrl}/province_centers`)
+//     .then(
+//         function(rental_data)
+//         { 
+//             console.log("Rental Data for Province + Centers with Geo Location");
+//             console.log("=====================================================");
+//             console.log(rental_data);
+//         });
 
-            selProvince.dispatch("change");
-        });
+let province_trend_by_year;
+let provinces;
+let ar_trend_chart;
+let vr_trend_chart;
 
-function selProvinceChanged(selectedProvince){
+d3.json(`${baseUrl}/province_trend_by_year`)
+.then(
+    function(data)
+    { 
+        province_trend_by_year = data;
 
-    selCenter.html('');
-    selZone.html('');
-    selNeighbourhood.html('');
+        provinces = province_trend_by_year.map((item) => item.Province);;
 
-    selCenter.append("option").text("All").property("value", "na");
+        renderTrendChartAverageRent();
+        renderTrendChartVacancyRate();
+    });
 
-    if(selectedProvince != 'na')
-    {
-        d3.json(`${baseUrl}/location_filter/centers/${selectedProvince}`)
-        .then(
-            function(centers)
-            { 
-                centers.forEach((center) => {
-                    selCenter
-                        .append("option")
-                        .text(center)
-                        .property("value", center);
-                });
-
-                
-            });
-    }
+function updateProvinceSelection(button, province) {
+    const index = provinces.findIndex(el => {
+        return el === province;
+      });
     
-    selCenter.dispatch("change");
-}
-
-function selCenterChanged(selectedCenter){
-
-    selZone.html('');
-    selNeighbourhood.html('');
-
-    selZone.append("option").text("All").property("value", "na");
-
-    if(selectedCenter != 'na')
-    {
-        const province = selProvince.node().value;
-
-        d3.json(`${baseUrl}/location_filter/zones/${province}/${selectedCenter}`)
-        .then(
-            function(zones)
-            { 
-                zones.forEach((zone) => {
-                    selZone
-                        .append("option")
-                        .text(zone)
-                        .property("value", zone);
-                });
-
-                
-            });
+    if(index < 0) {
+        provinces.push(province);
+        $(button).removeClass("disabled");
+    }
+    else {
+        provinces.splice(index, 1).sort(function(a, b){return a - b});
+        $(button).addClass("disabled");
     }
 
-    selZone.dispatch("change");
+    renderTrendChartAverageRent();
+    renderTrendChartVacancyRate();
 }
 
-function selZoneChanged(selectedZone){
-
-    selNeighbourhood.html('');
-
-    selNeighbourhood.append("option").text("All").property("value", "na");
-
-    if(selectedZone != 'na')
-    {
-        const province = selProvince.node().value;
-        const center = selCenter.node().value;
-
-        d3.json(`${baseUrl}/location_filter/neighbourhoods/${province}/${center}/${selectedZone}`)
-        .then(
-            function(neighbourhoods)
-            { 
-                neighbourhoods.forEach((neighbourhood) => {
-                    selNeighbourhood
-                        .append("option")
-                        .text(neighbourhood)
-                        .property("value", neighbourhood);
-                });
-            });
-    }
+function getColor(province) {
+    if(province == "Alta")
+        return "red";
+    else if(province == "B.C.")
+        return "blue";
+    else if(province == "Ont.")
+        return "green";
+    else if(province == "Que")
+        return "yellow";
+    else if(province == "Man.")
+        return "black";
 }
 
-d3.json(`${baseUrl}/location_filter/years`)
-.then(
-    function(years)
-    { 
-        selYear.append("option").text("All").property("value", "na");
-        
-        years.forEach((year) => {
-            selYear
-                .append("option")
-                .text(year)
-                .property("value", year);
-        });
+function getDatasetAverageRent(province) {
+
+    const province_data = province_trend_by_year.filter(
+        function(province_trend)
+        { 
+            return province_trend.Province == province;
+        })[0];
+
+    const averageRents = province_data.AverageRents.sort(function(a, b){return a.Year - b.Year})
+
+    const dict = {
+        label: province,
+        data: averageRents.map((item) => item.AverageRent),
+        borderColor: getColor(province),
+        backgroundColor: getColor(province),
+      };
+
+    return dict;
+}
+
+function renderTrendChartAverageRent() {
+    const years = province_trend_by_year[0].AverageRents.map((item) => item.Year);
+
+    datasets = [];
+    
+    provinces.forEach((province) => {
+         datasets.push(getDatasetAverageRent(province));
     });
 
-d3.json(`${baseUrl}/location_filter/dwellingtypes`)
-.then(
-    function(dwellingtypes)
-    { 
-        selDwellingType.append("option").text("All").property("value", "na");
-        
-        dwellingtypes.forEach((dwellingtype) => {
-            selDwellingType
-                .append("option")
-                .text(dwellingtype)
-                .property("value", dwellingtype);
-        });
+    const labels = years;
+    const data = {
+        labels: labels,
+        datasets: datasets
+    };
 
-        selCenter.dispatch("change");
-    });
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Average Rent Trend - YoY - By Province'
+            }
+            }
+        },
+    };
+    
+    if(ar_trend_chart != undefined)
+        ar_trend_chart.destroy();
 
-function getRentalInformation(){
-    const province = selProvince.node().value;
-    const center = selCenter.node().value;
-    const zone = selZone.node().value;
-    const neighbourhood = selNeighbourhood.node().value;
-    const year = selYear.node().value;
-    const dwellingType = selDwellingType.node().value;
-
-    const url = `${baseUrl}/rental_data/${province}/${center}/${zone}/${neighbourhood}/${year}/${dwellingType}`
-
-    d3.json(url)
-    .then(
-        function(rental_data)
-        { 
-            console.log("Filtered Rental Data");
-            console.log("=====================================================");
-            console.log(rental_data);
-        });
+    ar_trend_chart = new Chart("ar_trend_chart", config);
 }
 
-d3.json(`${baseUrl}/province_centers`)
-    .then(
-        function(rental_data)
+function getDatasetVacancyRate(province) {
+
+    const province_data = province_trend_by_year.filter(
+        function(province_trend)
         { 
-            console.log("Rental Data for Province + Centers with Geo Location");
-            console.log("=====================================================");
-            console.log(rental_data);
-        });
+            return province_trend.Province == province;
+        })[0];
+
+    const vacancyRates = province_data.VacancyRates.sort(function(a, b){return a.Year - b.Year})
+
+    const dict = {
+        label: province,
+        data: vacancyRates.map((item) => item.VacancyRate),
+        borderColor: getColor(province),
+        backgroundColor: getColor(province),
+      };
+
+    return dict;
+}
+
+function renderTrendChartVacancyRate() {
+    const years = province_trend_by_year[0].VacancyRates.map((item) => item.Year);
+
+    datasets = [];
+    
+    provinces.forEach((province) => {
+         datasets.push(getDatasetVacancyRate(province));
+    });
+
+    const labels = years;
+    const data = {
+        labels: labels,
+        datasets: datasets
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'VacancyRate Rate - YoY - By Province'
+            }
+            }
+        },
+    };
+    
+    if(vr_trend_chart != undefined)
+        vr_trend_chart.destroy();
+
+    vr_trend_chart = new Chart("vr_trend_chart", config);
+}
