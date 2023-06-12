@@ -62,7 +62,8 @@ function sample_plot(province){
           title: {text : `<b>Average Rents</b>`,font: { size: 24 }},
       };
       Plotly.newPlot("bar", trace_bar, bar_Layout);
-
+      
+     
     // pie chart
 
       var pie_data = [
