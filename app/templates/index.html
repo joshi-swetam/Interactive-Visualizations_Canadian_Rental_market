@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dashboard - Canadian Rental Market</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.js') }}">
+  <style>
+    .custom-select {
+        position: relative;
+        font-family: Arial;
+        width:200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    
+    <div class="row">
+      
+      <div class="jumbotron text-center" style="margin-bottom: 0px;">
+        <h1>Canadian Rental Market</h1>
+        <p>Use interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="panel-heading panel-heading-nav">
+        <ul class="nav nav-tabs">
+          <li role="presentation" class="active">
+            <a href="#trend" aria-controls="trends" role="tab" data-toggle="tab">Trends 2018 - 2022</a>
+          </li>
+          <li role="presentation">
+            <a href="#units" aria-controls="units" role="tab" data-toggle="tab">Number of Units</a>
+          </li>
+          <li role="presentation">
+            <a href="#leaflet" aria-controls="leaflet" role="tab" data-toggle="tab">Leaflet (Rent-Province-Center)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="trend">
+          <div class="row">
+            <div class="col-md-12">
+              <center>
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'Alta')" style="width:200px">Alta</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'B.C.')" style="width:200px">B.C</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'Ont.')" style="width:200px">Ont.</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'Que')" style="width:200px">Que</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'Man.')" style="width:200px">Man.</button>
+              </center>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6" style="height:500px;">
+              <div><canvas id="ar_trend_chart" style="width:100%"></canvas></div>
+            </div>
+            <div class="col-md-6" style="height:500px;">
+              <div><canvas id="vr_trend_chart" style="width:100%"></canvas></div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="units">
+          <div class="row">
+            <center>
+              <div class="col-md-12 center">
+                Year:<br/>
+                <select id="selYear" class="custom-select" onchange="renderNumberOfUnitsChart(this.value)"></select></br></br>
+              </div>
+            </center>
+          </div>
+          <div class="row">
+            <center>
+              <div class="col-md-12">
+                <div style="width:400px;height:400px;"><canvas id="nu_doughnut_total_chart"></canvas></div>
+              </div>
+            </center>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="leaflet">
+          Leaflet
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- D3 JS -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  
+</body>
+
+</html>
