@@ -4,17 +4,40 @@ const url = "data_2022.json"
 let Years = [2018,2019,2020,2021,2022];
 
 function sample_plot(province){
-  rent_array = [];
-  centres_array = [];
-  vacancy_array = [] ;
-  units_array = [];
+  let rent_array = [];
+  let centres_array = [];
+  let vacancy_array = [] ;
+  let units_array = [];
+  
   d3.json(url).then(function(data) {
           console.log(data); 
           console.log(data[0]);
           console.log(data[1]);
+          let province_array = data[1];
+          if (data[0][0]==province){
+             province_array = data[1][0];
+          }
+          else if(data[0][1]==province) {
+            province_array = data[1][1];
+          }
+          else if(data[0][2]==province) {
+            province_array = data[1][2];
+          }
+          else if(data[0][3]==province) {
+            province_array = data[1][3];
+          }
+          else if(data[0][4]==province) {
+            province_array = data[1][4];
+          }
+          else if(data[0][5]==province) {
+            province_array = data[1][5];
+          }
           
-        
-          var province_array = data[1][0].filter((name => name.Province == province));
+          else {
+            province_array = data[1][6];
+          }
+
+          // var province_array = data[1][0].filter((name => name.Province == province));
           console.log(province_array);
           for (i = 0 ; i < province_array.length ; i ++){
             rent_array.push(province_array[i].AverageRent);
