@@ -154,8 +154,7 @@ function renderMap() {
 function renderRentalInformationByCenter() {
   var selProvince = d3.select("#selProvince");
 
-  var provinceNames = [ "Que", "Alta","Ont.","B.C.","Man.","Sask."];
-  provinceNames.sort(function(a, b){return a - b});
+  var provinceNames = [ "Alta", "B.C." ,"Man." ,"Ont.", "Que", "Sask."];
 
   // populate province dropdown for rental information by center
   provinceNames.forEach((province) => {
