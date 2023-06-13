@@ -3,7 +3,6 @@ import pandas as pd
 from pprint import pprint
 from pymongo import MongoClient
 from flask import Flask, jsonify, render_template
-from flask_cors import CORS, cross_origin
 
 #################################################
 # Database Setup
@@ -17,8 +16,6 @@ rental_information = db['canadian_rental_market']
 # Flask Setup
 #################################################
 app = Flask(__name__)
-CORS(app, support_credentials=True)
-
 
 #################################################
 # Flask Routes
