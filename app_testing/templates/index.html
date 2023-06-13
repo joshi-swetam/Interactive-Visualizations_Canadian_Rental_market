@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dashboard - Canadian Rental Market</title>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  
+  <!-- Leaflet JavaScript code -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    .custom-select {
+        position: relative;
+        font-family: Arial;
+        width:200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">  
+      <div class="jumbotron text-center" style="margin-bottom: 0px;">
+        <h1>Canadian Rental Market</h1>
+        <p>Use interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="panel-heading panel-heading-nav">
+        <ul class="nav nav-tabs">
+          <li role="presentation" class="active">
+            <a href="#trend" aria-controls="trends" role="tab" data-toggle="tab">Trends 2018 - 2022</a>
+          </li>
+          <li role="presentation">
+            <a href="#units" aria-controls="units" role="tab" data-toggle="tab">Number of Units</a>
+          </li>
+          <li role="presentation">
+            <a href="#leaflet" aria-controls="leaflet" role="tab" data-toggle="tab">Maps</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="trend">
+          <div class="row">
+            <div class="col-md-12">
+              <center>
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'Alta')" style="width:200px">Alta</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'B.C.')" style="width:200px">B.C</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'Ont.')" style="width:200px">Ont.</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'Que')" style="width:200px">Que</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" onclick="updateProvinceSelection(this, 'Man.')" style="width:200px">Man.</button>
+              </center>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6" style="height:500px;">
+              <div><canvas id="ar_trend_chart" style="width:100%"></canvas></div>
+            </div>
+            <div class="col-md-6" style="height:500px;">
+              <div><canvas id="vr_trend_chart" style="width:100%"></canvas></div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="units">
+          <div class="row">
+            <center>
+              <div class="col-md-12 center">
+                Year:<br/>
+                <select id="selYear" class="custom-select" onchange="renderNumberOfUnitsChart(this.value)"></select></br></br>
+              </div>
+            </center>
+          </div>
+          <div class="row">
+            <center>
+              <div class="col-md-12 center">
+                Province:<br/>
+                <select id="selDataset" class="custom-select" onchange="optionChanged(this.value)"></select></br></br>
+              </div>
+            </center>
+              <div class="col-md-6">
+                <div id="bar"></div>
+              </div>
+              <div class="col-md-6">
+                <div id="pie"></div>
+              </div>
+              <div class="col-md-6">
+                <div style="width:400px;height:400px;"><canvas id="nu_doughnut_total_chart"></canvas></div>
+              </div>
+
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="leaflet">
+          <div class="row">
+              <div class="col-md-12 center">
+                  <div id="map" style="width:800px;height:600px"></div>
+              </div>
+          </div>
+        </div>
+    </div>
+    
+  </div>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- D3 JS -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Plotly JS -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <!-- Leaflet JavaScript code -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/logic.js') }}" ></script>
+  
+  
+</body>
+
+</html>
