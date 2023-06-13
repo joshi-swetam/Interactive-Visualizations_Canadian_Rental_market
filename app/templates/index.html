@@ -29,9 +29,7 @@
 <body>
 
   <div class="container">
-    
-    <div class="row">
-      
+    <div class="row">  
       <div class="jumbotron text-center" style="margin-bottom: 0px;">
         <h1>Canadian Rental Market</h1>
         <p>Use interactive charts below to explore the dataset</p>
@@ -47,7 +45,7 @@
             <a href="#units" aria-controls="units" role="tab" data-toggle="tab">Number of Units</a>
           </li>
           <li role="presentation">
-            <a href="#leaflet" aria-controls="leaflet" role="tab" data-toggle="tab">Leaflet (Rent-Province-Center)</a>
+            <a href="#leaflet" aria-controls="leaflet" role="tab" data-toggle="tab">Leaflet</a>
           </li>
         </ul>
       </div>
@@ -90,13 +88,18 @@
                 <div style="width:400px;height:400px;"><canvas id="nu_doughnut_total_chart"></canvas></div>
               </div>
             </center>
+          </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="leaflet">
-         <!-- The div where we'll insert our map -->
-          <div id="map"></div>
-
+          <div class="row">
+            <center>
+              <div class="col-md-12 center">
+                  <!-- The div where we'll insert our map -->
+                  <div id="map">...Map goes here...</div>
+              </div>
+            </center>
+          </div>
         </div>
-      </div>
     </div>
     
   </div>
