@@ -1320,21 +1320,9 @@ for (let i = 0; i < locations.length; i++) {
       weight: 0.7
     }).bindPopup("<h3>"+ locations[i].Filter.Center +"<h3><h3>Average Rent:$ "+ locations[i].AverageRents.Total.toFixed(2) + "<h3><h3>Vacancy Rate: "+ locations[i].AvearageVacancytRate.Total.toFixed(2) + "</h3>")
   );
-//   UnitsMarkers.push(
-//     L.circle(cordinates, {
-//       stroke: false,
-//       fillOpacity: 0.75,
-//       color: "white",
-//       fillColor: "purple",
-//       radius: markerSizeunits(locations[i].TotalNumberOfUnits.Total)
-//     })
-//   );
 
 };
-console.log(RentMarkers)
-console.log("VR")
-console.log(VRMarkers)
-// console.log(UnitsMarkers)
+
 
 // Create the base layers.
 let street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1408,7 +1396,4 @@ legend2.onAdd = function(map) {
         }
         return div;
     }  
-legend2.addTo(myMap)
-
-
-
+legend2.addTo(myMap);
