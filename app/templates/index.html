@@ -26,7 +26,7 @@
 
   <div class="container">
     <div class="row">  
-      <div class="jumbotron text-center" style="margin-bottom: 0px;">
+      <div class="jumbotron text-center" style="margin-bottom: 0px;background-color: darkblue;color:white">
         <h1>Canadian Rental Market</h1>
         <p>Use interactive charts below to explore the dataset</p>
       </div>
@@ -35,18 +35,21 @@
       <div class="panel-heading panel-heading-nav">
         <ul class="nav nav-tabs">
           <li role="presentation" class="active">
-            <a href="#trend" aria-controls="trends" role="tab" data-toggle="tab">Trends 2018 - 2022</a>
+            <a href="#trend" aria-controls="trends" role="tab" data-toggle="tab">Yearly Trends by Provinces</a>
           </li>
           <li role="presentation">
-            <a href="#units" aria-controls="units" role="tab" data-toggle="tab">Number of Units</a>
+            <a href="#units" aria-controls="units" role="tab" data-toggle="tab">Province Marketshare by Year</a>
           </li>
           <li role="presentation">
-            <a href="#leaflet" aria-controls="leaflet" role="tab" data-toggle="tab">Leaflet</a>
+            <a href="#center" aria-controls="units" role="tab" data-toggle="tab">Rental Information by Center</a>
+          </li>
+          <li role="presentation">
+            <a href="#leaflet" aria-controls="leaflet" role="tab" data-toggle="tab">Rental Market Landscape</a>
           </li>
         </ul>
       </div>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" style="background-color:rgb(238, 238, 238);">
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="trend">
           <div class="row">
@@ -79,13 +82,25 @@
             </center>
           </div>
           <div class="row">
+              <div class="col-md-12">
+                <center><div style="width:400px;height:400px;"><canvas id="nu_doughnut_total_chart"></canvas></div></center>
+              </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="center">
+          <div class="row">
+            <center>
+              <div class="col-md-12 center">
+                Province:<br/>
+                <select id="selProvince" class="custom-select" onchange="renderRentalInfoByCenterCharts(this.value)"></select></br></br>
+              </div>
+            </center>
               <div class="col-md-6">
-                <div id="bar">...BAR CHART GOES HERE...</div>
+                <div id="bar"></div>
               </div>
               <div class="col-md-6">
-                <div style="width:400px;height:400px;"><canvas id="nu_doughnut_total_chart"></canvas></div>
+                <div id="pie"></div>
               </div>
-
           </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="leaflet">
@@ -96,7 +111,6 @@
           </div>
         </div>
     </div>
-    
   </div>
 
   

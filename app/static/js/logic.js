@@ -1,12 +1,17 @@
-let locations = []
+let province_centers = [];
 
 d3.json(`${baseUrl}/province_centers`)
 .then(
     function(data)
     { 
-      locations = data;
+      province_centers = data;
+
+      renderRentalInformationByCenter();
+
       renderMap();
     });
+
+
 
 // A function to determine the marker size 
 function markerSizerent(rent) {
@@ -42,30 +47,30 @@ function renderMap() {
   let VRMarkers = [] ;
   // let UnitsMarkers = []
 
-  // Loop through locations, and create the markers.
-  for (let i = 0; i < locations.length; i++) {
-    let cordinates = [locations[i].Filters.CenterGeo.Lat,locations[i].Filters.CenterGeo.Lon];
+  // Loop through province_centers, and create the markers.
+  for (let i = 0; i < province_centers.length; i++) {
+    let cordinates = [province_centers[i].Filters.CenterGeo.Lat,province_centers[i].Filters.CenterGeo.Lon];
     
     RentMarkers.push(
       L.circle(cordinates, {
-        radius: markerSizerent(locations[i].AverageRents.Total),
-        fillColor: markerColor(locations[i].AverageRents.Total),
+        radius: markerSizerent(province_centers[i].AverageRents.Total),
+        fillColor: markerColor(province_centers[i].AverageRents.Total),
         fillOpacity: 0.7,
         color: "black",
         stroke: true,
         weight: 0.7
-      }).bindPopup("<h3>"+ locations[i].Filters.Center +"<h3><h3>Average Rent:$ "+ locations[i].AverageRents.Total.toFixed(2) + "<h3><h3>Vacancy Rate: "+ locations[i].AvearageVacancytRate.Total.toFixed(2) + "</h3>")
+      }).bindPopup("<h3>"+ province_centers[i].Filters.Center +"<h3><h3>Average Rent:$ "+ province_centers[i].AverageRents.Total.toFixed(2) + "<h3><h3>Vacancy Rate: "+ province_centers[i].AvearageVacancytRate.Total.toFixed(2) + "</h3>")
     );
 
     VRMarkers.push(
       L.circle(cordinates, {
-        radius: markerSizevr(locations[i].AvearageVacancytRate.Total),
-        fillColor: markerColorvr(locations[i].AvearageVacancytRate.Total),
+        radius: markerSizevr(province_centers[i].AvearageVacancytRate.Total),
+        fillColor: markerColorvr(province_centers[i].AvearageVacancytRate.Total),
         fillOpacity: 0.7,
         color: "black",
         stroke: true,
         weight: 0.7
-      }).bindPopup("<h3>"+ locations[i].Filters.Center +"<h3><h3>Average Rent:$ "+ locations[i].AverageRents.Total.toFixed(2) + "<h3><h3>Vacancy Rate: "+ locations[i].AvearageVacancytRate.Total.toFixed(2) + "</h3>")
+      }).bindPopup("<h3>"+ province_centers[i].Filters.Center +"<h3><h3>Average Rent:$ "+ province_centers[i].AverageRents.Total.toFixed(2) + "<h3><h3>Vacancy Rate: "+ province_centers[i].AvearageVacancytRate.Total.toFixed(2) + "</h3>")
     );
 
   };
@@ -145,3 +150,68 @@ function renderMap() {
       }  
   legend2.addTo(myMap);
 }
+
+function renderRentalInformationByCenter() {
+  var selProvince = d3.select("#selProvince");
+
+  var provinceNames = [ "Que", "Alta","Ont.","B.C.","Man.","Sask."];
+  provinceNames.sort(function(a, b){return a - b});
+
+  // populate province dropdown for rental information by center
+  provinceNames.forEach((province) => {
+    selProvince
+      .append("option")
+      .text(province)
+      .property("value", province);
+  });
+  
+  // initialize the dashboard and assign them to the functions created earlier
+  renderRentalInfoByCenterCharts(selProvince.node().value);
+}
+
+function renderRentalInfoByCenterCharts(Province){
+  let rent_array = [];
+  let centres_array = [];
+  let vacancy_array = [] ;
+  let units_array = []; 
+
+  for (i = 0 ; i < province_centers.length ; i ++){
+      if (province_centers[i].Filters.Province == Province){
+          rent_array.push(province_centers[i].AverageRents.Total);
+          centres_array.push(province_centers[i].Filters.Center);
+          vacancy_array.push(province_centers[i].AvearageVacancytRate.Total);
+          units_array.push(province_centers[i].TotalNumberOfUnits.Total)
+      }
+      
+      var trace_bar = [
+          {
+          x : centres_array, 
+          y : rent_array,
+          type : "bar",
+          marker: {
+              color: 'DE738F',
+              width: 10
+          },
+      }
+      ];
+
+      var bar_Layout = {
+          title: {text : `<b>Average Rents (Centres)</b>`,font: { size: 24 }},
+      };
+      Plotly.newPlot("bar", trace_bar, bar_Layout);
+  }
+
+  // pie chart
+  var pie_data = [
+      {
+      values : units_array,
+      labels : centres_array,
+      type : "pie"
+  }];
+
+  var pie_layout = {
+      title: {text : `<b> Units Available </b>`,font: { size: 24 }},
+
+  }
+  Plotly.newPlot("pie",pie_data,pie_layout);
+};

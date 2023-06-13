@@ -106,7 +106,7 @@ function renderTrendChartAverageRent() {
             },
             title: {
                 display: true,
-                text: 'Average Rent Trend - YoY - By Province'
+                text: 'Average Rent'
             }
             }
         },
@@ -164,7 +164,7 @@ function renderTrendChartVacancyRate() {
             },
             title: {
                 display: true,
-                text: 'Average Vacancy Rate - YoY - By Province'
+                text: 'Average Vacancy Rate'
             }
             }
         },
@@ -206,15 +206,28 @@ function renderNumberOfUnitsChart(year) {
         type: 'doughnut',
         data: data,
         options: {
-            responsive: true,
-            plugins: {
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: 'Number of Units by Province'
-            }
+                responsive: true,
+                plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Number of Units by Province'
+                },
+                tooltips: {
+                  callbacks: {
+                    label: function(tooltipItem, data) {
+                       var dataset = data.datasets[tooltipItem.datasetIndex];
+                      var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                        return previousValue + currentValue;
+                      });
+                      var currentValue = dataset.data[tooltipItem.index];
+                      var precentage = Math.floor(((currentValue/total) * 100)+0.5);
+                      return precentage + "%";
+                    }
+                  }
+                }
             }
         },
     };
