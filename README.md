@@ -41,7 +41,6 @@ The dashboard for our app has click buttons for four tabs.
  The first one is as yearly trend by years.It is built using [charts](!https://www.chartjs.org/) 
 
 ![image](/Images/dashboard%20page%201.png)
-
  It provides the insights for the Average rents and Vacancy rates across provinces over the years 2018-2022. Clickable buttons allow to add or delete the province based on the selection.
 
 The second is the number of units available across provinces over the years 2018-2022 using charts library.
