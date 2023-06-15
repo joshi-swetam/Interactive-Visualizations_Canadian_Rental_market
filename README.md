@@ -17,7 +17,7 @@ The data for the analysis was collected from Canada Mortgage and Housing Corpora
 Additional geographical information was [extracted](https://github.com/RimpleDabas/Interactive-Visualizations_Canadian_Rental_market/blob/main/Resources/API_Calls.ipynb) using [Geopify](https://www.geoapify.com/).
 
 For the transformation cleaning was done using jupyter. Data was transformed for both [relational](https://github.com/RimpleDabas/Interactive-Visualizations_Canadian_Rental_market/blob/main/Resources/Extraction_tranformation.ipynb) and [non relational databases](https://github.com/RimpleDabas/Interactive-Visualizations_Canadian_Rental_market/blob/main/api/tranformation/mongo_import.ipynb). 
-These datasets for these were converted in [csv](https://github.com/RimpleDabas/Interactive-Visualizations_Canadian_Rental_market/tree/main/Postgresql%20files) and [json formats](https://github.com/RimpleDabas/Interactive-Visualizations_Canadian_Rental_market/tree/main/api/output).
+The datasets for these were converted in [csv](https://github.com/RimpleDabas/Interactive-Visualizations_Canadian_Rental_market/tree/main/Postgresql%20files) and [json formats](https://github.com/RimpleDabas/Interactive-Visualizations_Canadian_Rental_market/tree/main/api/output).
 
 We used MongoDB Atlas cloud database and AWS as a cloud service proivider for our project.
 
