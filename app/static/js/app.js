@@ -7,15 +7,21 @@ let ar_trend_chart;
 let vr_trend_chart;
 let nu_doughnut_total_chart;
 
+//call API and get province trends by year
 d3.json(`${baseUrl}/province_trend_by_year`)
 .then(
     function(data)
     { 
+        // store data in variables for laer use
         province_trend_by_year = data;
 
+        //create list of provinces
         provinces = province_trend_by_year.map((item) => item.Province);
+
+        //create list of years
         years = province_trend_by_year[0].NumberOfUnits.map((item) => item.Year);
 
+        //add years to year dropdown
         years.forEach((year) => {
             d3.select("#selYear")
                 .append("option")
@@ -23,30 +29,42 @@ d3.json(`${baseUrl}/province_trend_by_year`)
                 .property("value", year);
         });
 
+        //render trend chart for average rents
         renderTrendChartAverageRent();
+
+        //render trend chart for average vacancy rates
         renderTrendChartVacancyRate();
         
+        //dispatch on chage even on year combobox to render doughnut chart
         d3.select("#selYear").dispatch("change");
     });
 
+//function to handle province selection for trend charts
 function updateProvinceSelection(button, province) {
+    //get index of the province from provinces list
     const index = provinces.findIndex(el => {
         return el === province;
       });
     
+    //if province is in the list, remove the province and disable button
     if(index < 0) {
         provinces.push(province);
         $(button).removeClass("disabled");
     }
+    //if province is not in the list, add the province and enable button
     else {
         provinces.splice(index, 1).sort(function(a, b){return a - b});
         $(button).addClass("disabled");
     }
 
+    //render trend chart for average rents
     renderTrendChartAverageRent();
+
+    //render trend chart for average vacancy rates
     renderTrendChartVacancyRate();
 }
 
+//function to get color of trend line based on province
 function getColor(province) {
     if(province == "Alta")
         return "red";
@@ -60,16 +78,20 @@ function getColor(province) {
         return "black";
 }
 
+//function to get dataset based on province for trend chart
 function getDatasetAverageRent(province) {
 
+    //filter province_data based on province
     const province_data = province_trend_by_year.filter(
         function(province_trend)
         { 
             return province_trend.Province == province;
         })[0];
 
+    //get and sort average rents for province and sort by year
     const averageRents = province_data.AverageRents.sort(function(a, b){return a.Year - b.Year})
 
+    //create a dictionary for trend dataset for the provicne
     const dict = {
         label: province,
         data: averageRents.map((item) => item.AverageRent),
@@ -77,24 +99,30 @@ function getDatasetAverageRent(province) {
         backgroundColor: getColor(province),
       };
 
+    //return  dict
     return dict;
 }
 
+//render trend chart for average rent
 function renderTrendChartAverageRent() {
+    //get list of years
     const years = province_trend_by_year[0].AverageRents.map((item) => item.Year);
 
     datasets = [];
     
+    //loop through active provinces and create dataset list
     provinces.forEach((province) => {
          datasets.push(getDatasetAverageRent(province));
     });
 
+    //create data object for chart.js
     const labels = years;
     const data = {
         labels: labels,
         datasets: datasets
     };
 
+    //create config object for chart.js
     const config = {
         type: 'line',
         data: data,
@@ -112,22 +140,28 @@ function renderTrendChartAverageRent() {
         },
     };
     
+    //if chart exists, destroy it
     if(ar_trend_chart != undefined)
         ar_trend_chart.destroy();
 
+    //render cahrt
     ar_trend_chart = new Chart("ar_trend_chart", config);
 }
 
+//function to get dataset based on province for trend chart
 function getDatasetVacancyRate(province) {
-
+    
+    //filter province_data based on province
     const province_data = province_trend_by_year.filter(
         function(province_trend)
         { 
             return province_trend.Province == province;
         })[0];
 
+    //get and sort vacancy rate for province and sort by year
     const vacancyRates = province_data.VacancyRates.sort(function(a, b){return a.Year - b.Year})
 
+    //create a dictionary for trend dataset for the provicne
     const dict = {
         label: province,
         data: vacancyRates.map((item) => item.VacancyRate),
@@ -135,24 +169,30 @@ function getDatasetVacancyRate(province) {
         backgroundColor: getColor(province),
       };
 
+    //return  dict
     return dict;
 }
 
+//render trend chart for vacancy rates
 function renderTrendChartVacancyRate() {
+    //get list of years
     const years = province_trend_by_year[0].VacancyRates.map((item) => item.Year);
 
     datasets = [];
     
+    //loop through active provinces and create dataset list
     provinces.forEach((province) => {
          datasets.push(getDatasetVacancyRate(province));
     });
 
+    //create data object for chart.js
     const labels = years;
     const data = {
         labels: labels,
         datasets: datasets
     };
 
+    //create config object for chart.js
     const config = {
         type: 'line',
         data: data,
@@ -170,13 +210,17 @@ function renderTrendChartVacancyRate() {
         },
     };
     
+    //if chart exists, destroy it
     if(vr_trend_chart != undefined)
         vr_trend_chart.destroy();
 
+    //render cahrt
     vr_trend_chart = new Chart("vr_trend_chart", config);
 }
 
+//render doughnut chart for selected year
 function renderNumberOfUnitsChart(year) {
+    //create dataset for doughnut chart for selected year
     let num_units_dataset = province_trend_by_year.map((item) => {
         var year_units = item.NumberOfUnits.filter(
             function(y)
@@ -191,10 +235,10 @@ function renderNumberOfUnitsChart(year) {
         return data_dict;
     });
 
+    //sort the dataset by province
     num_units_dataset = num_units_dataset.sort(function(a, b){return a.Province - b.Province});
 
-    console.log(num_units_dataset);
-
+    //create data object for chart.js
     const data = {
         labels: num_units_dataset.map((el) => el.Province),
         datasets: [{
@@ -202,6 +246,7 @@ function renderNumberOfUnitsChart(year) {
         }]
     };
 
+    //create config.object for chart.js
     const config = {
         type: 'doughnut',
         data: data,
@@ -232,8 +277,10 @@ function renderNumberOfUnitsChart(year) {
         },
     };
     
+    //if chart exists, destroy it
     if(nu_doughnut_total_chart != undefined)
         nu_doughnut_total_chart.destroy();
 
+    //render chart
     nu_doughnut_total_chart = new Chart("nu_doughnut_total_chart", config);
 }

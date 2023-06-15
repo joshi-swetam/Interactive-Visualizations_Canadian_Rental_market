@@ -19,10 +19,12 @@ app = Flask(__name__)
 #################################################
 # Flask Routes
 #################################################
+#api route to render index page
 @app.route("/")
 def index(): 
     return render_template("index.html")
 
+#api route to render api
 @app.route("/api")
 def api():
     return (
@@ -33,22 +35,37 @@ def api():
         f"/api/v1.0/province_trend_by_year<br/>"
     )
 
+#api route to get averages (AverageRent, VacancyRate, NumberOfUnits) for unique province center combinations
+#this route is used to render pie chart, bar chart and leaflet
 @app.route("/api/v1.0/province_centers")
 def get_province_centers():
+    #create and empty list
     rental_data = []
+
+    #query to get unique province center combinations
     query = rental_information.aggregate( 
                 [
                     {"$group": { "_id": { "Province": "$Location.Province", "Center": "$Location.Center" } } }
                 ]
             )
     
+    #read unique proivnce center combination in dataframe
     df = pd.json_normalize(query)
+
+    #loop through each province center combination
     for index, row in df.iterrows():
+         #call function to calculate averages and store return value in rental_data list
          rental_data.append(get_rental_data(row["_id.Province"], row["_id.Center"], 'na', 'na', 'na', 'na', True))
+
+    #return populated list
     return jsonify(rental_data)
 
+#app route to get trends by year for "Alta", "B.C.", "Ont.", "Que", "Man." for AVG-AverageRent, AVG-VacancyRate and SUM-NumberofUnits
+#this route is used to render trend charts for average rent and vacancy rate and doughnut chart for number of units
 @app.route("/api/v1.0/province_trend_by_year")
 def get_province_trend_by_year():
+
+    #query to get the averages from mongodb
     query = rental_information.aggregate( [
                 {
                     "$project": 
@@ -87,49 +104,68 @@ def get_province_trend_by_year():
                 , { "$sort":{"_id.Province":1, "_id.Year": 1} },
             ])
 
+    #load query results in to dataframe
     df = pd.json_normalize(query)
+
+    #rename columns
     df = df.rename(columns={'_id.Province': 'Province', '_id.Year': 'Year'})
+
+    #reorder columns
     df = df[["Province","Year","AverageRent","VacancyRate","NumberOfUnits"]]
 
+    #list of desired provinces
     province_list = ["Alta", "B.C.", "Ont.", "Que", "Man."]
 
     output = []
 
+    #for each province in province list
     for province in province_list:
+        #create an empty dictionary
         dict = {}
+        #set currrent proivnce in dicttionary
         dict["Province"] = province
 
+        #create a dataframe filtered by proivnce
         province_df = df[df['Province'] == province]
 
         average_rents = []
         vacancy_rates = []
         number_of_units = []
 
+        #loop through dataframe rows
         for index, row in province_df.iterrows():
+            #create dictionary for average rent
             ar_dict = {}
             ar_dict["Year"] = row["Year"]
             ar_dict["AverageRent"] = row["AverageRent"]
 
+            #create dictionary for vacancy rate
             vr_dict = {}
             vr_dict["Year"] = row["Year"]
             vr_dict["VacancyRate"] = row["VacancyRate"]
 
+            #create dictionary for number of units
             nu_dict = {}
             nu_dict["Year"] = row["Year"]
             nu_dict["NumberOfUnits"] = row["NumberOfUnits"]
 
+            #append dictionaries to respective list
             average_rents.append(ar_dict)
             vacancy_rates.append(vr_dict)
             number_of_units.append(nu_dict)
 
+        #add lits to main dict
         dict["AverageRents"] = average_rents
         dict["VacancyRates"] = vacancy_rates
         dict["NumberOfUnits"] = number_of_units
         
+        #append main dict to output
         output.append(dict)
 
+    #return output
     return jsonify(output)
 
+#function to dynamically create mongodb query based on parameter passed
 def get_query(p, c, z, n, y, dt):
     query = {}
     if(p is not None and p != "na"):
@@ -145,8 +181,10 @@ def get_query(p, c, z, n, y, dt):
     if(dt is not None and dt != "na"):
             query["DwellingType"] = dt
 
+    #return query
     return query
 
+#function to calculate average
 def get_average(df, field):
      vals = list(df.loc[df[field] != 0, field])
      if(len(vals) > 0):
@@ -154,6 +192,7 @@ def get_average(df, field):
      else:
           return 0
 
+#function to calculate sum
 def get_sum(df, field):
      vals = list(df.loc[df[field] != 0, field])
      if(len(vals) > 0):
@@ -161,12 +200,18 @@ def get_sum(df, field):
      else:
           return 0
 
+#function to get rental information based on parameter passed, province/center in this case
 def get_rental_data(p, c, z, n, y, dt, geo = False):
      # Create query based on parameter
     query = get_query(p, c, z, n, y, dt)
+
+    #store query results in dataframe
     df = pd.json_normalize(rental_information.find(query))
+
+    #creat an empty list
     output = {}
-    #location rent
+
+    #dictionary of filters passed
     filter_dict = {}
     filter_dict["Province"] = p
     filter_dict["Center"] = c
@@ -179,6 +224,7 @@ def get_rental_data(p, c, z, n, y, dt, geo = False):
 
     if(len(df.index) > 0):
 
+        #add lat/long to results if geo = True
         if(geo):
             geo_dict = {}
             geo_dict["Lat"] = df["Location.CenterGeo.lat"].iloc[0]
@@ -209,9 +255,12 @@ def get_rental_data(p, c, z, n, y, dt, geo = False):
         nu_dict["3br+"] = get_sum(df, "RentalInformation.NumberofUnits.3br+")
         nu_dict["Total"] = get_sum(df, "RentalInformation.NumberofUnits.Total")
 
+        #add lists to output
         output["AverageRents"] = ar_dict
         output["AvearageVacancytRate"] = vr_dict
         output["TotalNumberOfUnits"] = nu_dict
+    
+    #return output
     return output
 
 if __name__ == '__main__':
