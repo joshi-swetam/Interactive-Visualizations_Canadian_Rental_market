@@ -38,7 +38,7 @@ Following were used for the building process :
 ## Description 
 The dashboard for our app has click buttons for four tabs. 
 
- The first one is yearly trend by years. It is built using [charts](!https://www.chartjs.org/) 
+ The first one is yearly trend by years. It is built using [charts](!https://www.chartjs.org/) javascript library.
 
 
 ![image](/Images/dashboard%20page%201.png)
