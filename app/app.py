@@ -2,11 +2,11 @@ import pandas as pd
 from pprint import pprint
 from pymongo import MongoClient
 from flask import Flask, jsonify, render_template
-
+from config import username,password
 #################################################
 # Database Setup
 #################################################
-mongo = MongoClient("mongodb+srv://swetajoshi:Password234@project3.yny9jap.mongodb.net/") # port=27017 for local
+mongo = MongoClient(f"mongodb+srv://{username}:{password}@project3.yny9jap.mongodb.net/") # port=27017 for local
 
 db = mongo['rental_data']
 rental_information = db['canadian_rental_market']
