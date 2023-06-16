@@ -56,6 +56,11 @@ The fourth visualization is bulit using [leaflet](https://leafletjs.com/) which 
 
 ![Image](/Images/dashboard%20page%204.png)
 
+## Refrences
+ - https://www.chartjs.org/docs/latest/
+ - https://plotly.com/javascript/
+ - Youtube videos
+
 
 
 
