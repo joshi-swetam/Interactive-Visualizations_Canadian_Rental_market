@@ -36,9 +36,11 @@ Following were used for the building process :
 
 
 ## Description 
+Flask code for the app can be located [here](https://github.com/RimpleDabas/Interactive-Visualizations_Canadian_Rental_market/blob/main/app/app.py).
+
 The dashboard for our app has click buttons for four tabs. 
 
- The first one is yearly trend by years. It is built using [charts](!https://www.chartjs.org/) javascript library.
+ The first one is yearly trend by years. It is built using [charts](!https://www.chartjs.org/) javascript library and code for the same is [here](https://github.com/RimpleDabas/Interactive-Visualizations_Canadian_Rental_market/blob/main/app/static/js/app.js).
 
 
 ![image](/Images/dashboard%20page%201.png)
@@ -49,7 +51,7 @@ The second is the number of units available across provinces over the years 2018
 
 The dropdown selection allows the user year selection.
 
-The third visualization tab is the average rents and units available in the centres across provinces using [plotly](https://plotly.com/). 
+The third visualization tab is the average rents and units available in the centres across provinces using [plotly](https://plotly.com/) and code is [here](https://github.com/RimpleDabas/Interactive-Visualizations_Canadian_Rental_market/blob/main/app/static/js/logic.js) along with forth tab. 
 ![Image](/Images/dashboard%20page%203.png)
 
 The fourth visualization is bulit using [leaflet](https://leafletjs.com/) which has layers for the average rents and vacancy rates.The size of the markers are based on the data for the location.It allows the user to get the information using pop up feature as below 
@@ -59,6 +61,7 @@ The fourth visualization is bulit using [leaflet](https://leafletjs.com/) which 
 ## Refrences
  - https://www.chartjs.org/docs/latest/
  - https://plotly.com/javascript/
+ - Leaflet
  - Youtube videos
 
 
