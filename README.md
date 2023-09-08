@@ -1,4 +1,4 @@
-# Canadian Rental Market 
+# Canadian Rental Market - Dashboard
 ## Inspiration 
 
 Rents across the major cities surged due to higher net immigration.We wanted to build an app to get insights for the rental market with interactive visualizations.
